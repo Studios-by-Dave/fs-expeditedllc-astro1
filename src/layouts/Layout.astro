@@ -1,0 +1,40 @@
+---
+import "../styles/global.css";
+import SEO from "../components/SEO.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { organizationSchema, localBusinessSchema } from "../lib/schemas";
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  schemas?: Record<string, unknown>[];
+}
+const { title, description, canonical, image, schemas = [] } = Astro.props;
+const baseSchemas = [organizationSchema, localBusinessSchema, ...schemas];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO title={title} description={description} canonical={canonical} image={image} schemas={baseSchemas} />
+  </head>
+  <body class="bg-background p-2 sm:p-3 lg:p-4">
+    <div class="site-frame min-h-screen rounded-[24px] border border-border/70 bg-background/95">
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Icon from "../../components/Icon.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import { serviceAreas } from "../../data/serviceAreas";
+import { breadcrumbSchema } from "../../lib/schemas";
+
+const crumbs = [
+  { name: "Home", url: "https://www.fs-expeditedllc.com/" },
+  { name: "Service Area", url: "https://www.fs-expeditedllc.com/service-area" },
+];
+---
+
+<Layout
+  title="Service Area | F&S Expedited LLC — Dump Truck Hauling Across the Carolinas"
+  description="F&S Expedited provides dump truck hauling, gravel delivery, debris removal & site services within a 100-mile radius of Shelby, NC. Serving 50+ cities across NC & SC."
+  canonical="/service-area"
+  schemas={[breadcrumbSchema(crumbs)]}
+>
+  <section class="relative py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="text-primary font-semibold tracking-widest text-sm uppercase font-sans">Where We Work</span>
+        <h1 class="mt-4 text-4xl md:text-5xl font-heading font-bold text-foreground">Our Service Area</h1>
+        <p class="mt-6 text-xl text-muted-foreground">
+          Headquartered in Shelby, NC, F&amp;S Expedited runs dump trucks and crews across a 100-mile radius — covering 50+ communities throughout North and South Carolina.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-background">
+    <div class="container mx-auto px-4">
+      <div class="grid gap-8 md:grid-cols-2">
+        {
+          serviceAreas.map((a) => (
+            <a href={`/service-area/${a.slug}`} class="group bg-card border border-border rounded-2xl overflow-hidden hover-card-lift">
+              <div class="relative h-48 overflow-hidden">
+                <img src={a.heroImage} alt={`${a.city}, ${a.state} dump truck hauling`} class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+                <div class="absolute bottom-4 left-4">
+                  <span class="font-heading font-bold text-2xl text-white drop-shadow">{a.city}, {a.state}</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <p class="text-sm text-primary font-semibold">{a.county}</p>
+                <p class="mt-2 text-muted-foreground">{a.metaDescription}</p>
+                <div class="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
+                  <Icon name="clock" class="w-4 h-4 text-primary" /> {a.responseTime}
+                </div>
+                <span class="mt-4 inline-flex items-center gap-2 text-primary font-semibold group-hover:underline">
+                  Explore {a.city} <Icon name="arrow-right" class="w-4 h-4" />
+                </span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <ContactCTA />
+</Layout>

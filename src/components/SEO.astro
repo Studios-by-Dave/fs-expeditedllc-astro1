@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string; // path, e.g. /services
+  image?: string;
+  schemas?: Record<string, unknown>[];
+}
+const {
+  title,
+  description = "Expedited dump truck hauling, gravel delivery, debris removal & site services within 1-hour of Shelby, NC. Licensed & insured.",
+  canonical = Astro.url.pathname,
+  image = "/apple-touch-icon.png",
+  schemas = [],
+} = Astro.props;
+
+const site = Astro.site ?? new URL("https://www.fs-expeditedllc.com");
+const canonicalUrl = new URL(canonical, site).href;
+const imageUrl = image.startsWith("http") ? image : new URL(image, site).href;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:site_name" content="F&S Expedited LLC" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+{schemas.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)}

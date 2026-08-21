@@ -1,0 +1,103 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Icon from "../../../components/Icon.astro";
+import ContactCTA from "../../../components/ContactCTA.astro";
+import { services, getCategory, serviceCategories } from "../../../data/services";
+import { breadcrumbSchema, serviceSchema } from "../../../lib/schemas";
+
+export function getStaticPaths() {
+  return services.map((s) => ({
+    params: { category: s.category, service: s.slug },
+    props: { service: s },
+  }));
+}
+
+const { service } = Astro.props;
+const category = getCategory(service.category)!;
+const related = services.filter((s) => s.category === service.category && s.slug !== service.slug);
+
+const crumbs = [
+  { name: "Home", url: "https://www.fs-expeditedllc.com/" },
+  { name: "Services", url: "https://www.fs-expeditedllc.com/services" },
+  { name: category.title, url: `https://www.fs-expeditedllc.com/services/${category.slug}` },
+  { name: service.title, url: `https://www.fs-expeditedllc.com/services/${category.slug}/${service.slug}` },
+];
+---
+
+<Layout
+  title={`${service.title} | F&S Expedited LLC`}
+  description={service.description}
+  canonical={`/services/${category.slug}/${service.slug}`}
+  image={service.heroImage}
+  schemas={[breadcrumbSchema(crumbs), serviceSchema(service.title, service.description)]}
+>
+  <section class="relative py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <a href={`/services/${category.slug}`} class="text-primary text-sm font-semibold hover:underline">{category.title}</a>
+        <div class="mt-4 mb-6 w-16 h-16 mx-auto rounded-xl bg-primary/90 flex items-center justify-center text-primary-foreground">
+          <Icon name={service.icon} class="w-8 h-8" />
+        </div>
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-foreground">{service.title}</h1>
+        <p class="mt-6 text-xl text-muted-foreground">{service.description}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-background">
+    <div class="container mx-auto px-4">
+      <div class="grid gap-12 lg:grid-cols-3">
+        <div class="lg:col-span-2">
+          <h2 class="text-2xl font-heading font-bold text-foreground mb-4">About This Service</h2>
+          <p class="text-lg text-muted-foreground leading-relaxed">{service.longDescription}</p>
+
+          <h3 class="mt-10 text-xl font-heading font-semibold text-foreground mb-4">What's Included</h3>
+          <div class="flex flex-wrap gap-2">
+            {service.features.map((f) => (
+              <span class="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm text-secondary-foreground">
+                <Icon name="check" class="w-4 h-4 text-primary" /> {f}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <aside class="lg:col-span-1">
+          <div class="bg-card border border-border rounded-2xl p-6 sticky top-24">
+            <h3 class="text-lg font-heading font-semibold text-foreground mb-4">Why Choose F&amp;S</h3>
+            <ul class="space-y-3">
+              {service.benefits.map((b) => (
+                <li class="flex items-start gap-3 text-sm text-muted-foreground">
+                  <Icon name="check-circle" class="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="/contact" class="mt-6 block text-center bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+              Get a Free Quote
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  {
+    related.length > 0 && (
+      <section class="section-padding bg-gradient-card">
+        <div class="container mx-auto px-4">
+          <h2 class="text-2xl font-heading font-bold text-center text-foreground mb-8">Related Services</h2>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
+            {related.map((r) => (
+              <a href={`/services/${r.category}/${r.slug}`} class="bg-card border border-border rounded-xl p-5 hover-card-lift">
+                <Icon name={r.icon} class="w-6 h-6 text-primary mb-2" />
+                <span class="font-heading font-semibold text-foreground">{r.title}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <ContactCTA />
+</Layout>

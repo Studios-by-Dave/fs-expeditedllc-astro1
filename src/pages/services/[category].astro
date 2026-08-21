@@ -1,0 +1,86 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Icon from "../../components/Icon.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import { serviceCategories, services } from "../../data/services";
+import { breadcrumbSchema } from "../../lib/schemas";
+
+export function getStaticPaths() {
+  return serviceCategories.map((cat) => ({
+    params: { category: cat.slug },
+    props: { category: cat },
+  }));
+}
+
+const { category } = Astro.props;
+const categoryServices = services.filter((s) => s.category === category.slug);
+const otherCategories = serviceCategories.filter((c) => c.slug !== category.slug);
+
+const crumbs = [
+  { name: "Home", url: "https://www.fs-expeditedllc.com/" },
+  { name: "Services", url: "https://www.fs-expeditedllc.com/services" },
+  { name: category.title, url: `https://www.fs-expeditedllc.com/services/${category.slug}` },
+];
+---
+
+<Layout
+  title={`${category.title} | F&S Expedited LLC`}
+  description={category.description}
+  canonical={`/services/${category.slug}`}
+  image={category.heroImage}
+  schemas={[breadcrumbSchema(crumbs)]}
+>
+  <section class="relative py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-6 w-16 h-16 mx-auto rounded-xl bg-primary/90 flex items-center justify-center text-primary-foreground">
+          <Icon name={category.icon} class="w-8 h-8" />
+        </div>
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-foreground">{category.title}</h1>
+        <p class="mt-6 text-xl text-muted-foreground">{category.description}</p>
+        {category.intro && <p class="mt-4 text-lg text-muted-foreground/80">{category.intro}</p>}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-background">
+    <div class="container mx-auto px-4">
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {
+          categoryServices.map((s) => (
+            <a href={`/services/${category.slug}/${s.slug}`} class="group bg-card border border-border rounded-2xl p-6 hover-card-lift">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
+                <Icon name={s.icon} class="w-6 h-6" />
+              </div>
+              <h2 class="text-xl font-heading font-semibold text-foreground group-hover:text-primary">{s.title}</h2>
+              <p class="mt-2 text-sm text-muted-foreground">{s.description}</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                {s.features.slice(0, 3).map((f) => (
+                  <span class="text-xs rounded-full bg-secondary px-3 py-1 text-secondary-foreground">{f}</span>
+                ))}
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gradient-card">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-heading font-bold text-center text-foreground mb-8">Other Service Categories</h2>
+      <div class="grid gap-4 sm:grid-cols-3 max-w-4xl mx-auto">
+        {
+          otherCategories.map((c) => (
+            <a href={`/services/${c.slug}`} class="bg-card border border-border rounded-xl p-5 text-center hover-card-lift">
+              <Icon name={c.icon} class="w-7 h-7 text-primary mx-auto mb-2" />
+              <span class="font-heading font-semibold text-foreground">{c.title}</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <ContactCTA />
+</Layout>

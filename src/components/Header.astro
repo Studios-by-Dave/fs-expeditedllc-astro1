@@ -1,0 +1,103 @@
+---
+import Icon from "./Icon.astro";
+import { mainNav, site } from "../data/site";
+import { serviceCategories, services } from "../data/services";
+import { serviceAreas } from "../data/serviceAreas";
+
+const servicesByCat = serviceCategories.map((cat) => ({
+  ...cat,
+  items: services.filter((s) => s.category === cat.slug),
+}));
+---
+
+<header class="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+  <div class="container flex h-16 items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-3 shrink-0">
+      <img src="/assets/fs-logo.png" alt="F&S Expedited LLC" class="h-10 w-auto" width="40" height="40" />
+      <span class="font-heading font-bold text-lg text-foreground leading-none">
+        F&amp;S <span class="text-primary">EXPEDITED</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-1" aria-label="Primary">
+      {
+        mainNav.map((item) => {
+          if (item.label === "Services") {
+            return (
+              <div class="relative group">
+                <button type="button" class="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground hover:text-primary" data-dropdown>
+                  Services <Icon name="chevron-down" class="w-4 h-4" />
+                </button>
+                <div class="absolute left-0 top-full hidden pt-2 group-hover:block">
+                  <div class="w-80 rounded-xl border border-border bg-card p-3 shadow-elevated">
+                    {servicesByCat.map((cat) => (
+                      <div class="mb-2">
+                        <a href={`/services/${cat.slug}`} class="block px-3 py-1 text-sm font-semibold text-primary hover:underline">{cat.title}</a>
+                        <div class="flex flex-col">
+                          {cat.items.map((s) => (
+                            <a href={`/services/${s.category}/${s.slug}`} class="px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-background rounded">{s.title}</a>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          }
+          if (item.label === "Service Area") {
+            return (
+              <div class="relative group">
+                <button type="button" class="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground hover:text-primary" data-dropdown>
+                  Service Area <Icon name="chevron-down" class="w-4 h-4" />
+                </button>
+                <div class="absolute left-0 top-full hidden pt-2 group-hover:block">
+                  <div class="w-60 rounded-xl border border-border bg-card p-3 shadow-elevated">
+                    <a href="/service-area" class="block px-3 py-1 text-sm font-semibold text-primary hover:underline">All Service Areas</a>
+                    {serviceAreas.map((a) => (
+                      <a href={`/service-area/${a.slug}`} class="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-background rounded">{a.city}, {a.state}</a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          }
+          return (
+            <a href={item.href} class="rounded-md px-3 py-2 text-sm font-medium text-foreground hover:text-primary">{item.label}</a>
+          );
+        })
+      }
+      <a href={`tel:${site.phoneJoe.tel}`} class="ml-2 inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors">
+        <Icon name="phone" class="w-4 h-4 text-green-500" /> {site.phoneJoe.display}
+      </a>
+    </nav>
+
+    <button type="button" class="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-foreground" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <Icon name="menu" class="w-6 h-6" id="menu-icon" />
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-border bg-background">
+    <nav class="container flex flex-col py-4" aria-label="Mobile">
+      {mainNav.map((item) => <a href={item.href} class="px-2 py-2 text-sm font-medium text-foreground hover:text-primary">{item.label}</a>)}
+      <a href="/service-area" class="px-2 py-2 text-sm font-semibold text-primary">Service Areas</a>
+      {
+        serviceAreas.map((a) => (
+          <a href={`/service-area/${a.slug}`} class="px-4 py-1 text-sm text-muted-foreground">{a.city}, {a.state}</a>
+        ))
+      }
+      <a href={`tel:${site.phoneJoe.tel}`} class="mt-2 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-4 py-3 rounded-lg text-sm font-semibold">
+        <Icon name="phone" class="w-4 h-4 text-green-500" /> Call {site.phoneJoe.display}
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("mobile-toggle");
+  const menu = document.getElementById("mobile-menu");
+  toggle?.addEventListener("click", () => {
+    const open = menu?.classList.toggle("hidden") === false;
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+</script>

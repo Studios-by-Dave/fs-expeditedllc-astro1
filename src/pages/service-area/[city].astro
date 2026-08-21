@@ -1,0 +1,172 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Icon from "../../components/Icon.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import { serviceAreas, getServiceArea } from "../../data/serviceAreas";
+import { breadcrumbSchema, faqSchema } from "../../lib/schemas";
+import { site } from "../../data/site";
+
+export function getStaticPaths() {
+  return serviceAreas.map((a) => ({
+    params: { city: a.slug },
+    props: { area: a },
+  }));
+}
+
+const { area } = Astro.props;
+
+const crumbs = [
+  { name: "Home", url: "https://www.fs-expeditedllc.com/" },
+  { name: "Service Area", url: "https://www.fs-expeditedllc.com/service-area" },
+  { name: `${area.city}, ${area.state}`, url: `https://www.fs-expeditedllc.com/service-area/${area.slug}` },
+];
+---
+
+<Layout
+  title={area.metaTitle}
+  description={area.metaDescription}
+  canonical={`/service-area/${area.slug}`}
+  image={area.heroImage}
+  schemas={[breadcrumbSchema(crumbs), faqSchema(area.faqs)]}
+>
+  <main class="min-h-screen pt-24">
+    <section class="relative py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="mb-6 w-16 h-16 mx-auto rounded-xl bg-primary/90 flex items-center justify-center text-primary-foreground">
+            <Icon name={area.heroIcon} class="w-8 h-8" />
+          </div>
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-foreground">Dump Truck Hauling Services in {area.city}, {area.state}</h1>
+          <p class="mt-6 text-xl text-muted-foreground">{area.intro}</p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href={`tel:${site.phoneJoe.tel}`} class="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+              <Icon name="phone" class="w-4 h-4 text-green-500" /> Call {site.phoneJoe.display}
+            </a>
+            <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-secondary/90 transition-colors">
+              Get Free Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-background">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <span class="text-primary font-semibold tracking-widest text-sm uppercase font-sans">{area.city} Service Area</span>
+              <h2 class="mt-4 text-3xl font-heading font-bold text-foreground">{area.city} Dump Truck &amp; Hauling Service, {area.county}</h2>
+              <p class="mt-6 text-lg text-muted-foreground leading-relaxed">{area.prose[0]}</p>
+              <div class="mt-6 space-y-3">
+                <div class="flex items-center gap-3"><Icon name="clock" class="w-5 h-5 text-primary" /><span class="text-foreground">{area.responseTime}</span></div>
+                <div class="flex items-center gap-3"><Icon name="map-pin" class="w-5 h-5 text-primary" /><span class="text-foreground">{area.serviceRadius}</span></div>
+                <div class="flex items-center gap-3"><Icon name="shield" class="w-5 h-5 text-primary" /><span class="text-foreground">Fully licensed and insured in North Carolina</span></div>
+              </div>
+            </div>
+            <div class="bg-card border border-border rounded-xl overflow-hidden">
+              <img src={area.heroImage} alt={`${area.city}, ${area.state} dump truck hauling`} class="w-full h-64 object-cover" />
+              <div class="p-6">
+                <h3 class="text-xl font-heading font-semibold text-foreground mb-4">Neighborhoods &amp; Communities</h3>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                  {area.neighborhoods.map((n) => (
+                    <div class="flex items-center gap-2"><Icon name="check" class="w-3 h-3 text-primary" /><span class="text-muted-foreground">{n}</span></div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gradient-card">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-primary font-semibold tracking-widest text-sm uppercase font-sans">Local Services</span>
+          <h2 class="mt-4 text-3xl md:text-4xl font-heading font-bold text-foreground tracking-wider">SERVICES IN {area.city.toUpperCase()}, {area.state}</h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {area.services.map((svc) => (
+            <div class="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors">
+              <h3 class="text-xl font-heading font-semibold text-foreground mb-3">{svc.name}</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed">{svc.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-background">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-primary font-semibold tracking-widest text-sm uppercase font-sans">Local Advantage</span>
+          <h2 class="mt-4 text-3xl md:text-4xl font-heading font-bold text-foreground tracking-wider">WHY CHOOSE F&amp;S IN {area.city.toUpperCase()}</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {area.advantages.map((adv) => (
+            <div class="bg-card border border-border rounded-xl p-6">
+              <div class="flex items-start gap-4">
+                <div class="p-2 bg-primary/10 rounded-lg"><Icon name="package" class="w-5 h-5 text-primary" /></div>
+                <div>
+                  <h3 class="text-lg font-heading font-semibold text-foreground mb-2">{adv.title}</h3>
+                  <p class="text-muted-foreground text-sm">{adv.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gradient-card">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-foreground tracking-wider mb-6 text-center">{area.city}'s Dump Truck &amp; Material Delivery Company</h2>
+          {area.prose.slice(1).map((p) => <p class="text-lg text-muted-foreground leading-relaxed mb-6">{p}</p>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gradient-card">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16">
+            <span class="text-primary font-semibold tracking-widest text-sm uppercase font-sans">FAQs</span>
+            <h2 class="mt-4 text-3xl md:text-4xl font-heading font-bold text-foreground tracking-wider">FREQUENTLY ASKED QUESTIONS — {area.city.toUpperCase()}, {area.state}</h2>
+          </div>
+          <div class="space-y-4">
+            {area.faqs.map((f) => (
+              <div class="bg-card border border-border rounded-xl p-6">
+                <h3 class="text-lg font-heading font-semibold text-foreground mb-2">{f.q}</h3>
+                <p class="text-muted-foreground">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="bg-card rounded-2xl p-12 border border-border">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">Ready for Fast Service in {area.city}?</h2>
+            <p class="text-lg text-muted-foreground mb-8">Call Joe or Luke for fast, reliable service that keeps your {area.city} project on schedule.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href={`tel:${site.phoneJoe.tel}`} class="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                <Icon name="phone" class="w-4 h-4 text-green-500" /> Call {site.phoneJoe.display}
+              </a>
+              <a href={`tel:${site.phoneLuke.tel}`} class="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-secondary/90 transition-colors">
+                <Icon name="phone" class="w-4 h-4 text-green-500" /> Call {site.phoneLuke.display}
+              </a>
+            </div>
+            <div class="mt-6">
+              <a href="/service-area" class="text-primary hover:underline">← View Other Service Areas</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

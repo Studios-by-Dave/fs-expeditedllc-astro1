@@ -1,0 +1,81 @@
+---
+import Icon from "./Icon.astro";
+import { site, mainNav } from "../data/site";
+import { serviceCategories, services } from "../data/services";
+import { serviceAreas } from "../data/serviceAreas";
+---
+
+<footer class="bg-card border-t border-border mt-16">
+  <div class="container py-12">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="/assets/fs-logo.png" alt="F&S Expedited LLC" class="h-10 w-auto" width="40" height="40" />
+          <span class="font-heading font-bold text-lg text-foreground leading-none">F&amp;S <span class="text-primary">EXPEDITED</span></span>
+        </div>
+        <p class="text-sm text-muted-foreground mb-4">Expedited dump truck hauling, gravel delivery, debris removal &amp; site services within 1-hour of Shelby, NC. Licensed &amp; insured.</p>
+        <div class="flex gap-3">
+          <a href={site.facebook} target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20" aria-label="Facebook">
+            <Icon name="facebook" class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-heading font-semibold text-foreground mb-4 uppercase tracking-wide text-sm">Services</h3>
+        <ul class="space-y-2 text-sm">
+          {
+            services.slice(0, 8).map((s) => (
+              <li><a href={`/services/${s.category}/${s.slug}`} class="text-muted-foreground hover:text-primary">{s.title}</a></li>
+            ))
+          }
+          <li><a href="/services" class="text-primary hover:underline">View All Services →</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-heading font-semibold text-foreground mb-4 uppercase tracking-wide text-sm">Service Area</h3>
+        <ul class="space-y-2 text-sm">
+          {
+            serviceAreas.map((a) => (
+              <li><a href={`/service-area/${a.slug}`} class="text-muted-foreground hover:text-primary">{a.city}, {a.state}</a></li>
+            ))
+          }
+          <li><a href="/service-area" class="text-primary hover:underline">100-Mile Radius →</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-heading font-semibold text-foreground mb-4 uppercase tracking-wide text-sm">Contact</h3>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href={`tel:${site.phoneJoe.tel}`} class="flex items-center gap-2 text-muted-foreground hover:text-primary">
+              <Icon name="phone" class="w-4 h-4 text-primary" /> Call {site.phoneJoe.label}: {site.phoneJoe.display}
+            </a>
+          </li>
+          <li>
+            <a href={`tel:${site.phoneLuke.tel}`} class="flex items-center gap-2 text-muted-foreground hover:text-primary">
+              <Icon name="phone" class="w-4 h-4 text-primary" /> Call {site.phoneLuke.label}: {site.phoneLuke.display}
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${site.email}`} class="flex items-center gap-2 text-muted-foreground hover:text-primary">
+              <Icon name="mail" class="w-4 h-4 text-primary" /> {site.email}
+            </a>
+          </li>
+          <li class="flex items-center gap-2 text-muted-foreground">
+            <Icon name="map-pin" class="w-4 h-4 text-primary" /> {site.serviceRadius}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+      <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="/privacy-policy" class="hover:text-primary">Privacy Policy</a>
+        <a href="/terms-of-service" class="hover:text-primary">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>

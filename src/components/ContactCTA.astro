@@ -1,0 +1,74 @@
+---
+import Icon from "./Icon.astro";
+import { site } from "../data/site";
+
+interface Props {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+}
+const {
+  id = "contact",
+  title = "CONTACT US",
+  subtitle = "Ready to get your materials hauled? Give us a call for a free, no-obligation estimate.",
+} = Astro.props;
+---
+
+<section id={id} class="section-padding bg-background">
+  <div class="container px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="text-primary font-bold tracking-widest text-base md:text-lg uppercase font-sans">Get In Touch</span>
+      <h2 class="mt-4 text-4xl md:text-5xl lg:text-5xl font-heading font-bold text-foreground tracking-wider">{title}</h2>
+      <p class="mt-4 text-muted-foreground text-lg md:text-xl font-sans max-w-xl mx-auto">{subtitle}</p>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-8 justify-center items-center">
+        <div class="flex flex-col items-center">
+          <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 animate-pulse">Call {site.phoneJoe.label}!</span>
+          <a
+            href={`tel:${site.phoneJoe.tel}`}
+            class="inline-flex items-center gap-2 text-xl bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+            title={site.phoneJoe.label}
+          >
+            <Icon name="phone" class="w-6 h-6 text-green-500" />
+            {site.phoneJoe.display}
+          </a>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 animate-pulse">Call {site.phoneLuke.label}!</span>
+          <a
+            href={`tel:${site.phoneLuke.tel}`}
+            class="inline-flex items-center gap-2 text-xl bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+            title={site.phoneLuke.label}
+          >
+            <Icon name="phone" class="w-6 h-6 text-green-500" />
+            {site.phoneLuke.display}
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
+        <a href={`mailto:${site.email}`} class="flex flex-col items-center gap-2 group">
+          <div class="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-xl group-hover:bg-primary/20 transition-colors">
+            <Icon name="mail" class="w-7 h-7 text-primary" />
+          </div>
+          <p class="text-base text-muted-foreground font-sans">Email Us</p>
+          <p class="text-foreground font-bold text-base">{site.email}</p>
+        </a>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-xl">
+            <Icon name="map-pin" class="w-7 h-7 text-primary" />
+          </div>
+          <p class="text-base text-muted-foreground font-sans">Service Area</p>
+          <p class="text-foreground font-bold text-base">100-Mile Radius of Shelby, NC</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-xl">
+            <Icon name="check-circle" class="w-7 h-7 text-primary" />
+          </div>
+          <p class="text-base text-muted-foreground font-sans">Peace of Mind</p>
+          <span class="text-foreground font-bold text-base">Fully Licensed &amp; Insured</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10% Off Your First Haul — F&S Expedited LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C8913A;
+    --gold-light: #E8B86D;
+    --black: #111010;
+    --off-white: #F5F2EC;
+    --muted: #6B6560;
+    --border: rgba(0,0,0,0.1);
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--black);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+
+  /* Subtle grid texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  .card {
+    background: #fff;
+    max-width: 520px;
+    width: 100%;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Top accent bar */
+  .card::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+  }
+
+  .header {
+    padding: 2rem 2.5rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold-light);
+    opacity: 0.4;
+  }
+
+  .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 18vw, 88px);
+    line-height: 0.9;
+    letter-spacing: 0.01em;
+    color: var(--black);
+  }
+
+  .headline em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .subhead {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-top: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .body {
+    padding: 1.75rem 2.5rem;
+  }
+
+  /* Promo code block */
+  .code-block {
+    background: var(--off-white);
+    border: 1px dashed var(--gold-light);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    animation: fadeUp 0.6s 0.15s ease both;
+  }
+
+  .code-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .code-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .copy-btn {
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    flex-shrink: 0;
+  }
+
+  .copy-btn:hover { background: #b07828; }
+  .copy-btn:active { transform: scale(0.97); }
+  .copy-btn.copied { background: #3a7a3a; }
+
+  /* Steps */
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 1.75rem;
+    animation: fadeUp 0.6s 0.25s ease both;
+  }
+
+  .step {
+    background: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .step p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  /* CTA buttons */
+  .cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeUp 0.6s 0.35s ease both;
+  }
+
+  .btn {
+    display: block;
+    text-align: center;
+    padding: 14px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.1s;
+    letter-spacing: 0.01em;
+  }
+
+  .btn:active { transform: scale(0.98); }
+
+  .btn-primary {
+    background: var(--black);
+    color: #fff;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--black);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { border-color: rgba(0,0,0,0.3); }
+
+  /* Footer strip */
+  .footer {
+    padding: 1rem 2.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    color: var(--black);
+  }
+
+  .footer-meta {
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.5;
+  }
+
+  /* Decorative corner element */
+  .corner-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--gold);
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    transform: rotate(0deg);
+  }
+
+  @media (max-width: 480px) {
+    .header, .body, .footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .step p { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="header">
+    <div class="corner-tag">New Customer</div>
+    <p class="eyebrow">Limited time offer</p>
+    <h1 class="headline"><em>10%</em><br>OFF YOUR<br>FIRST HAUL</h1>
+    <p class="subhead">Dump truck hauling, gravel delivery & site services — within 100 miles of Shelby, NC.</p>
+  </div>
+
+  <div class="body">
+
+    <div class="code-block">
+      <div>
+        <span class="code-label">Promo code</span>
+        <span class="code-value">1HAUL</span>
+      </div>
+      <button class="copy-btn" id="copyBtn" onclick="copyCode()">Copy Code</button>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <p>Call for a free quote</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <p>Mention code at checkout</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <p>We haul, you save 10%</p>
+      </div>
+    </div>
+
+    <div class="cta-group">
+      <a href="tel:8653649011" class="btn btn-primary">📞 Call Joe — (865) 364-9011</a>
+      <a href="tel:7047518141" class="btn btn-secondary">Call Luke — (704) 751-8141</a>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">F&amp;S Expedited LLC</div>
+    <div class="footer-meta">Licensed &amp; Insured · Shelby, NC<br>Valid on first haul only</div>
+  </div>
+
+</div>
+
+<script>
+  function copyCode() {
+    navigator.clipboard.writeText('1HAUL').then(function() {
+      var btn = document.getElementById('copyBtn');
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.textContent = 'Copy Code';
+        btn.classList.remove('copied');
+      }, 2500);
+    }).catch(function() {
+      var btn = document.getElementById('copyBtn');
+      btn.textContent = '1HAUL';
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+
+const highlights = [
+  { icon: "truck", title: "Dump Truck Hauling", desc: "Bulk material transport, site-to-site hauling, and flexible scheduling." },
+  { icon: "mountain", title: "Gravel & Material Delivery", desc: "Gravel, sand, soil, and aggregate delivered to your job site." },
+  { icon: "construction", title: "Site Services", desc: "Land clearing, grading, debris removal, and prep work." },
+  { icon: "zap", title: "Emergency Expedited", desc: "Same-day and next-day dispatch when the job can't wait." },
+];
+---
+
+<Layout
+  title="F&S Expedited LLC — Dump Truck Hauling & Material Delivery | Shelby, NC"
+  description="Expedited dump truck hauling, gravel delivery, debris removal & site services within 1-hour of Shelby, NC. Serving 50+ cities. Licensed & insured."
+  canonical="/"
+>
+  <section class="relative py-24 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="text-primary font-semibold tracking-widest text-sm uppercase font-sans">Shelby, NC · 100-Mile Radius</span>
+        <h1 class="mt-4 text-5xl md:text-6xl font-heading font-bold text-foreground">Expedited Dump Truck Hauling &amp; Delivery</h1>
+        <p class="mt-6 text-xl text-muted-foreground">F&amp;S Expedited keeps Carolina job sites moving with fast, reliable hauling, material delivery, and site services.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/services" class="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+            <Icon name="truck" class="w-5 h-5" /> Explore Services
+          </a>
+          <a href="/service-area" class="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-secondary/90 transition-colors">
+            <Icon name="map-pin" class="w-5 h-5" /> Service Area
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-background">
+    <div class="container mx-auto px-4">
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {highlights.map((h) => (
+          <div class="bg-card border border-border rounded-2xl p-6 hover-card-lift">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
+              <Icon name={h.icon} class="w-6 h-6" />
+            </div>
+            <h2 class="text-xl font-heading font-semibold text-foreground">{h.title}</h2>
+            <p class="mt-2 text-sm text-muted-foreground">{h.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ContactCTA />
+</Layout>

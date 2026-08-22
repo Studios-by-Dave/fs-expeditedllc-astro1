@@ -80,6 +80,22 @@ const crumbs = [
       </div>
     </section>
 
+    <section class="py-16 bg-background">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <span class="text-primary font-semibold tracking-widest text-sm uppercase font-sans">Around {area.city}</span>
+          <h2 class="mt-4 text-3xl md:text-4xl font-heading font-bold text-foreground tracking-wider">FROM {area.city.toUpperCase()}, {area.state}</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          {area.gallery.map((img) => (
+            <div class="overflow-hidden rounded-xl border border-border">
+              <img src={img} alt={`${area.city}, ${area.state}`} class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <section class="py-20 bg-gradient-card">
       <div class="container mx-auto px-4">
         <div class="text-center max-w-3xl mx-auto mb-16">

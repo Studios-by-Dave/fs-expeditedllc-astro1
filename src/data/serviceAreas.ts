@@ -149,7 +149,11 @@ export const serviceAreas: ServiceArea[] = [
     ],
     responseTime: "Fast response across Rutherford County",
     serviceRadius: "Full Rutherford County coverage",
-    gallery: ["/assets/forest city nc_1.jpeg"],
+    gallery: [
+      "/assets/forest city nc_1.jpeg",
+      "/assets/service locations/forest city/forest city nc_9.jpeg",
+      "/assets/service locations/forest city/forest city nc_10.jpg",
+    ],
   },
   {
     slug: "gastonia-nc",
@@ -207,7 +211,10 @@ export const serviceAreas: ServiceArea[] = [
     ],
     responseTime: "About 30 minutes from Shelby",
     serviceRadius: "Full Gaston County coverage",
-    gallery: ["/assets/gastonia nc_4.png"],
+    gallery: [
+      "/assets/gastonia nc_4.png",
+      "/assets/service locations/gastonia/gastonia nc_3.jpg",
+    ],
   },
   {
     slug: "asheville-nc",
@@ -265,7 +272,11 @@ export const serviceAreas: ServiceArea[] = [
     ],
     responseTime: "Rapid response across Buncombe County",
     serviceRadius: "Full Buncombe County coverage",
-    gallery: ["/assets/Asheville nc_header1.jpg"],
+    gallery: [
+      "/assets/Asheville nc_header1.jpg",
+      "/assets/service locations/asheville/Asheville nc_2.jpeg",
+      "/assets/service locations/asheville/asheville nc_6.jpeg",
+    ],
   },
 ];
 

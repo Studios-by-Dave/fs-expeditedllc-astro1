@@ -30,15 +30,18 @@ const crumbs = [
   image={category.heroImage}
   schemas={[breadcrumbSchema(crumbs)]}
 >
-  <section class="relative py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
-    <div class="container mx-auto px-4">
+  <section class="relative py-24 overflow-hidden">
+    <img src={category.heroImage} alt={`${category.title} in the Carolinas`} class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30"></div>
+    <div class="container mx-auto px-4 relative">
       <div class="max-w-4xl mx-auto text-center">
         <div class="mb-6 w-16 h-16 mx-auto rounded-xl bg-primary/90 flex items-center justify-center text-primary-foreground">
           <Icon name={category.icon} class="w-8 h-8" />
         </div>
-        <h1 class="text-4xl md:text-5xl font-heading font-bold text-foreground">{category.title}</h1>
-        <p class="mt-6 text-xl text-muted-foreground">{category.description}</p>
-        {category.intro && <p class="mt-4 text-lg text-muted-foreground/80">{category.intro}</p>}
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-white">{category.title}</h1>
+        <p class="mt-6 text-xl text-gray-200">{category.description}</p>
+        {category.intro && <p class="mt-4 text-lg text-gray-300/90">{category.intro}</p>}
       </div>
     </div>
   </section>

@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import CTABanner from "../components/CTABanner.astro";
+import { breadcrumbSchema } from "../lib/schemas";
+import Icon from "../components/Icon.astro";
+
+const crumbs = [
+  { name: "Home", href: "https://www.fs-expeditedllc.com/" },
+  { name: "How We Work", href: "https://www.fs-expeditedllc.com/process" },
+];
+
+const steps = [
+  { icon: "clipboard", step: "01", title: "Request a Quote", description: "Give us a call. We'll assess your hauling needs and provide a transparent, no-obligation estimate." },
+  { icon: "truck", step: "02", title: "Schedule & Dispatch", description: "We confirm your timeline and dispatch the right equipment for your job — same-day available." },
+  { icon: "shield", step: "03", title: "Haul & Deliver", description: "Our experienced operators handle the load safely and efficiently, on schedule." },
+  { icon: "check", step: "04", title: "Job Complete", description: "We confirm delivery, clean up, and make sure you're 100% satisfied with the work." },
+];
+---
+
+<Layout
+  title="How We Work — Our Hauling Process"
+  description="Simple and transparent: call for a quote, schedule your haul, and we deliver on time. See how F&S Expedited gets the job done in 4 easy steps."
+  canonical="/process"
+  schemas={[breadcrumbSchema(crumbs)]}
+>
+  <Breadcrumbs items={crumbs} />
+  <section id="process" class="py-12 bg-gradient-card">
+    <div class="container px-4">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-primary font-bold tracking-widest text-base md:text-lg uppercase font-sans">How It Works</span>
+        <h2 class="mt-4 text-4xl md:text-5xl lg:text-5xl font-heading font-bold text-foreground tracking-wider">OUR PROCESS</h2>
+        <p class="mt-4 text-muted-foreground text-lg md:text-xl font-sans">Simple, transparent, and built for speed. Here's how we get the job done.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        {
+          steps.map((item, index) => (
+            <div class="relative text-center group">
+              {index < steps.length - 1 && <div class="hidden md:block absolute top-10 left-1/2 w-full h-px bg-border" />}
+              <div class="relative z-10 w-20 h-20 mx-auto bg-card border-2 border-border flex items-center justify-center group-hover:border-green-500 transition-colors duration-300">
+                <Icon name={item.icon} class="w-8 h-8 text-green-500" />
+              </div>
+              <span class="inline-block mt-4 text-sm font-bold text-green-500 tracking-widest font-sans">STEP {item.step}</span>
+              <h3 class="mt-2 font-heading text-xl font-bold text-foreground tracking-wide">{item.title}</h3>
+              <p class="mt-2 text-base text-muted-foreground leading-relaxed font-sans">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-background">
+    <div class="container px-4">
+      <div class="max-w-5xl mx-auto">
+        <img src="/assets/gallery/papaw-truck-closeup.jpg" alt="F&S Expedited LLC PaPaw dump truck ready for hauling service" class="w-full h-64 md:h-96 object-cover rounded-xl border border-border shadow-lg" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</Layout>

@@ -1,0 +1,48 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<section id="why-us" class="py-12 bg-background relative">
+  <div class="absolute top-0 left-0 right-0 h-3 diamond-plate"></div>
+  <div class="container px-4">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-primary font-bold tracking-widest text-base md:text-lg uppercase font-sans">Why F&S</span>
+      <h2 class="mt-4 text-4xl md:text-5xl lg:text-5xl font-heading font-bold text-foreground tracking-wider">WHY CHOOSE US</h2>
+      <p class="mt-4 text-muted-foreground text-lg md:text-xl font-sans">
+        Built on hard work, reliability, and a commitment to getting the job done right.
+        <a href="/services/emergency-expedited" class="text-primary hover:underline font-semibold ml-2">See our emergency services →</a>
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="flex gap-4 group">
+        <div class="w-12 h-12 shrink-0 bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors"><Icon name="shield" class="w-6 h-6 text-green-500" /></div>
+        <div><h3 class="font-heading text-2xl font-bold text-foreground tracking-wide">Licensed &amp; Insured</h3><p class="text-lg text-muted-foreground mt-1 font-sans">Full coverage protects your project and our crew.</p></div>
+      </div>
+      <div class="flex gap-4 group">
+        <div class="w-12 h-12 shrink-0 bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors"><Icon name="clock" class="w-6 h-6 text-green-500" /></div>
+        <div><h3 class="font-heading text-2xl font-bold text-foreground tracking-wide">Fast Turnaround</h3><p class="text-lg text-muted-foreground mt-1 font-sans">Same-day and next-day hauling when you need it.</p></div>
+      </div>
+      <div class="flex gap-4 group">
+        <div class="w-12 h-12 shrink-0 bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors"><Icon name="star" class="w-6 h-6 text-green-500" /></div>
+        <div><h3 class="font-heading text-2xl font-bold text-foreground tracking-wide">Reliable Service</h3><p class="text-lg text-muted-foreground mt-1 font-sans">On-time delivery you can count on, every load.</p></div>
+      </div>
+      <div class="flex gap-4 group">
+        <div class="w-12 h-12 shrink-0 bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors"><Icon name="map-pin" class="w-6 h-6 text-green-500" /></div>
+        <div><h3 class="font-heading text-2xl font-bold text-foreground tracking-wide">Local &amp; Regional</h3><p class="text-lg text-muted-foreground mt-1 font-sans">Serving Charlotte, Knoxville &amp; surrounding areas.</p></div>
+      </div>
+      <div class="flex gap-4 group">
+        <div class="w-12 h-12 shrink-0 bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors"><Icon name="package" class="w-6 h-6 text-green-500" /></div>
+        <div><h3 class="font-heading text-2xl font-bold text-foreground tracking-wide">Competitive Rates</h3><p class="text-lg text-muted-foreground mt-1 font-sans">Fair, transparent pricing with no hidden fees.</p></div>
+      </div>
+      <div class="flex gap-4 group">
+        <div class="w-12 h-12 shrink-0 bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors"><Icon name="truck" class="w-6 h-6 text-green-500" /></div>
+        <div><h3 class="font-heading text-2xl font-bold text-foreground tracking-wide">Heavy Equipment</h3><p class="text-lg text-muted-foreground mt-1 font-sans">Modern fleet ready for any size hauling job.</p></div>
+      </div>
+    </div>
+
+    <div class="mt-12 flex justify-center">
+      <img src="/assets/LiscensedInsured.jpeg" alt="Licensed &amp; Insured Badge" class="h-20 w-auto object-contain" />
+    </div>
+  </div>
+</section>

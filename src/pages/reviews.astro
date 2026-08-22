@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Testimonials from "../components/Testimonials.astro";
+import FeaturedTestimonial from "../components/FeaturedTestimonial.astro";
+import CTABanner from "../components/CTABanner.astro";
+import { breadcrumbSchema } from "../lib/schemas";
+
+const crumbs = [
+  { name: "Home", href: "https://www.fs-expeditedllc.com/" },
+  { name: "Reviews", href: "https://www.fs-expeditedllc.com/reviews" },
+];
+---
+
+<Layout
+  title="Reviews — Leave a Review for F&S Expedited LLC"
+  description="See what customers say about F&S Expedited LLC's dump truck hauling and site services. Leave your own review — we appreciate your feedback."
+  canonical="/reviews"
+  schemas={[breadcrumbSchema(crumbs)]}
+>
+  <Breadcrumbs items={crumbs} />
+  <Testimonials />
+  <FeaturedTestimonial />
+  <CTABanner />
+</Layout>

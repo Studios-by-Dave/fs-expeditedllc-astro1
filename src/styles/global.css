@@ -264,6 +264,12 @@
     z-index: 1;
   }
 
+  .font-bebas {
+    font-family: "Bebas Neue", "Oswald", Impact, sans-serif;
+    letter-spacing: 0.02em;
+  }
+  }
+
   .filter-primary {
     filter: invert(88%) sepia(35%) saturate(3015%) hue-rotate(336deg) brightness(101%) contrast(106%);
   }

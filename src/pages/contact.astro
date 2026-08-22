@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import { breadcrumbSchema, localBusinessSchema } from "../lib/schemas";
+
+const crumbs = [
+  { name: "Home", href: "https://www.fs-expeditedllc.com/" },
+  { name: "Contact", href: "https://www.fs-expeditedllc.com/contact" },
+];
+const schema = { "@context": "https://schema.org", "@graph": [localBusinessSchema, breadcrumbSchema(crumbs)] };
+---
+
+<Layout
+  title="Contact Us — Get a Free Hauling Quote"
+  description="Call F&S Expedited LLC for a free hauling estimate. Dump truck services within 100 miles of Shelby, NC. Call (865) 364-9011 or (704) 751-8141."
+  canonical="/contact"
+  schemas={[schema]}
+>
+  <Breadcrumbs items={crumbs} />
+  <ContactCTA />
+</Layout>

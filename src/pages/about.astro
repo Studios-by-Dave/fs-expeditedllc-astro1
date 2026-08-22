@@ -1,0 +1,140 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import WhyChooseUs from "../components/WhyChooseUs.astro";
+import CTABanner from "../components/CTABanner.astro";
+import { breadcrumbSchema, localBusinessSchema } from "../lib/schemas";
+
+const crumbs = [
+  { name: "Home", href: "https://www.fs-expeditedllc.com/" },
+  { name: "About", href: "https://www.fs-expeditedllc.com/about" },
+];
+const schema = { "@context": "https://schema.org", "@graph": [localBusinessSchema, breadcrumbSchema(crumbs)] };
+
+const values = [
+  { title: "Integrity", description: "Honest estimates, clear communication, and work we stand behind." },
+  { title: "Reliability", description: "We show up on time with the right equipment, every single job." },
+  { title: "Hard Work", description: "No shortcuts. Just solid, dependable hauling from a team that cares." },
+];
+
+const differentiators = [
+  "Owner-operated: Joe and Luke are hands-on with every job.",
+  "Modern, well-maintained fleet ready for any size load.",
+  "Flexible scheduling including same-day and emergency service.",
+  "Serving a 100-mile radius from Shelby, NC with local know-how.",
+];
+---
+
+<Layout
+  title="About F&S Expedited LLC — Shelby, NC Hauling Experts"
+  description="Meet the owners and team behind F&S Expedited LLC. Licensed & insured dump truck hauling, debris removal, and site services serving Shelby, Gastonia, Forest City, and within 100 miles."
+  canonical="/about"
+  schemas={[schema]}
+>
+  <Breadcrumbs items={crumbs} />
+
+  <section id="about" class="py-16 bg-gradient-card relative">
+    <div class="absolute top-0 left-0 right-0 h-3 diamond-plate"></div>
+    <div class="container px-4">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-primary font-bold tracking-widest text-base md:text-lg uppercase font-sans">About Us</span>
+        <h1 class="mt-4 text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground tracking-wider">HAULING DONE RIGHT</h1>
+        <p class="mt-4 text-muted-foreground text-lg font-sans">
+          F&S Expedited LLC is a locally owned dump truck hauling and site service company based in Shelby, NC,
+          built on hard work, reliability, and a commitment to getting the job done right.
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="flex justify-center mb-12">
+          <img src="/assets/joe-and-luke-owners.jpg" alt="F&S Expedited LLC owners Joe Alrich and Luke Tutterow" class="w-full max-w-2xl rounded-xl border border-border shadow-lg" loading="lazy" />
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 text-lg text-muted-foreground font-sans leading-relaxed">
+          <div>
+            <h2 class="text-3xl font-heading font-bold text-foreground tracking-wide mb-4">Our Story</h2>
+            <p class="mb-4">
+              F&S Expedited LLC was founded by Joe Alrich and Luke Tutterow, two local operators who saw a need for
+              dependable, no-nonsense hauling in the Shelby area. What started as a single truck has grown into a
+              trusted regional operation serving contractors, landscapers, and homeowners across Western North Carolina.
+            </p>
+            <p>
+              We take pride in showing up on time, hauling safely, and treating every job — big or small — like it's
+              our own property. From gravel driveways to full site cleanouts, we bring the equipment and the work ethic
+              to get it done.
+            </p>
+          </div>
+          <div>
+            <h2 class="text-3xl font-heading font-bold text-foreground tracking-wide mb-4">Our Mission</h2>
+            <p class="mb-4">
+              To deliver fast, fair, and reliable dump truck hauling and site services that keep our customers' projects
+              moving. We measure success by the trust our clients place in us and the quality of every load we move.
+            </p>
+            <p>
+              Licensed and insured, we serve a 100-mile radius from Shelby, NC — including Gastonia, Forest City,
+              Kings Mountain, and Asheville — with the same straightforward, hardworking approach that built our name.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-background">
+    <div class="container px-4">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-primary font-semibold tracking-widest text-sm uppercase font-sans">Owners</span>
+        <h2 class="mt-4 text-4xl font-heading font-bold text-foreground tracking-wider">MEET THE TEAM</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-card border border-border rounded-xl p-8 text-center">
+          <div class="w-20 h-20 mx-auto rounded-full bg-green-500/10 flex items-center justify-center mb-4"><span class="font-heading text-2xl text-green-500 font-bold">JA</span></div>
+          <h3 class="text-2xl font-heading font-bold text-foreground tracking-wide">Joe Alrich</h3>
+          <p class="text-muted-foreground font-sans mt-2">Co-Owner &amp; Operator</p>
+          <a href="tel:8653649011" class="text-primary font-semibold mt-2 inline-block hover:underline">(865) 364-9011</a>
+        </div>
+        <div class="bg-card border border-border rounded-xl p-8 text-center">
+          <div class="w-20 h-20 mx-auto rounded-full bg-green-500/10 flex items-center justify-center mb-4"><span class="font-heading text-2xl text-green-500 font-bold">LT</span></div>
+          <h3 class="text-2xl font-heading font-bold text-foreground tracking-wide">Luke Tutterow</h3>
+          <p class="text-muted-foreground font-sans mt-2">Co-Owner &amp; Operator</p>
+          <a href="tel:7047518141" class="text-primary font-semibold mt-2 inline-block hover:underline">(704) 751-8141</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-background">
+    <div class="container px-4">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-primary font-semibold tracking-widest text-sm uppercase font-sans">What Drives Us</span>
+        <h2 class="mt-4 text-4xl font-heading font-bold text-foreground tracking-wider">OUR VALUES</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {
+          values.map((v) => (
+            <div class="bg-card border border-border rounded-xl p-8">
+              <h3 class="text-2xl font-heading font-bold text-foreground tracking-wide mb-2">{v.title}</h3>
+              <p class="text-muted-foreground font-sans">{v.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-background">
+    <div class="container px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-card border-2 border-primary/20 rounded-2xl p-8">
+          <h2 class="text-3xl font-heading font-bold text-foreground tracking-wider mb-4">WHAT SETS US APART</h2>
+          <ul class="space-y-3 text-lg text-muted-foreground font-sans">
+            {differentiators.map((d) => <li class="flex gap-3"><span class="text-green-500 font-bold">✓</span><span>{d}</span></li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <WhyChooseUs />
+  <CTABanner />
+</Layout>

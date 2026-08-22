@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { breadcrumbSchema } from "../lib/schemas";
+
+const crumbs = [
+  { name: "Home", href: "https://www.fs-expeditedllc.com/" },
+  { name: "Terms of Service", href: "https://www.fs-expeditedllc.com/terms-of-service" },
+];
+
+const sections = [
+  { title: "Use of Site", body: "You agree to use this site lawfully and not to engage in any activity that disrupts or harms the site or others." },
+  { title: "Service Quotes", body: "Quotes provided are estimates. Final pricing depends on job specifics, site conditions, and materials. All services are subject to availability and confirmation." },
+  { title: "Limitation of Liability", body: "F&S Expedited LLC is not liable for indirect or incidental damages arising from use of this site or our services to the extent permitted by law." },
+  { title: "Governing Law", body: "These terms are governed by the laws of the State of North Carolina." },
+  { title: "Changes", body: "We may update these terms at any time. Continued use constitutes acceptance of the revised terms." },
+  { title: "Contact", body: "Questions? Contact us at Aldrich2577@gmail.com or (865) 364-9011." },
+];
+---
+
+<Layout
+  title="Terms of Service — F&S Expedited LLC"
+  description="The terms governing your use of the F&S Expedited LLC website and hauling services. Read our full terms of service."
+  canonical="/terms-of-service"
+  schemas={[breadcrumbSchema(crumbs)]}
+>
+  <Breadcrumbs items={crumbs} />
+  <section class="py-12 bg-background">
+    <div class="container px-4">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-foreground tracking-wider mb-6">Terms of Service</h1>
+        <p class="text-lg text-muted-foreground mb-10 font-sans">
+          By accessing or using the F&S Expedited LLC website, you agree to these Terms of Service.
+        </p>
+
+        <div class="space-y-10">
+          {
+            sections.map((section) => (
+              <div>
+                <h2 class="text-2xl font-heading font-bold text-foreground tracking-wide mb-3">{section.title}</h2>
+                <p class="text-muted-foreground font-sans leading-relaxed">{section.body}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-border text-sm text-muted-foreground">
+          © {new Date().getFullYear()} F&S Expedited LLC. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

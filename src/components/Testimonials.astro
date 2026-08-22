@@ -1,0 +1,57 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<section id="testimonials" class="section-padding bg-background">
+  <div class="container px-4">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-primary font-semibold tracking-widest text-sm uppercase font-sans">Leave a Review</span>
+      <h2 class="mt-4 text-3xl md:text-4xl lg:text-4xl font-heading font-bold text-foreground tracking-wider">LEAVE A REVIEW</h2>
+      <p class="mt-4 text-muted-foreground text-lg font-sans">Real reviews from our valued clients. Share your experience with our dump truck hauling services.</p>
+    </div>
+
+    <div class="max-w-5xl mx-auto">
+      <div class="w-full border border-border rounded-xl bg-card">
+        <div class="p-8">
+          <div class="flex justify-center mb-6">
+            <div class="flex items-center space-x-2">
+              <Icon name="mail" class="w-8 h-8 text-primary" />
+              <div class="flex space-x-1">
+                {[1, 2, 3, 4, 5].map((star) => <Icon name="star" class="w-5 h-5 text-yellow-400" />)}
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-semibold text-foreground mb-4 text-center">Leave a Review</h3>
+          <p class="text-muted-foreground mb-6 text-center max-w-md mx-auto">Share your experience with F&S Expedited LLC. Your feedback helps us improve our services.</p>
+
+          <div class="w-full">
+            <script type="text/javascript" src="https://widget.senja.io/js/iframeResizer.min.js" async></script>
+            <iframe
+              id="senja-collector-iframe"
+              src="https://senja.io/p/fs-expedited-llc/r/N78S6v?mode=embed&nostyle=true"
+              allow="camera;microphone"
+              title="Senja form"
+              frameborder="0"
+              scrolling="auto"
+              width="100%"
+              height="700"
+              class="rounded-lg border border-border"
+            ></iframe>
+            <script type="text/javascript" is:inline>
+              iFrameResize({ log: false, checkOrigin: false }, "#senja-collector-iframe");
+            </script>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-border">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+              <div><div class="text-2xl font-bold text-primary">5.0</div><div class="text-sm text-muted-foreground">Average Rating</div></div>
+              <div><div class="text-2xl font-bold text-primary">100+</div><div class="text-sm text-muted-foreground">Happy Customers</div></div>
+              <div><div class="text-2xl font-bold text-primary">24/7</div><div class="text-sm text-muted-foreground">Service Available</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

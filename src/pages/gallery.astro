@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Gallery from "../components/Gallery.astro";
+import { breadcrumbSchema } from "../lib/schemas";
+
+const crumbs = [
+  { name: "Home", href: "https://www.fs-expeditedllc.com/" },
+  { name: "Gallery", href: "https://www.fs-expeditedllc.com/gallery" },
+];
+---
+
+<Layout
+  title="Project Gallery — F&S Expedited LLC"
+  description="Browse completed dump truck hauling, debris removal, gravel delivery, and site service projects from F&S Expedited LLC across Shelby, Gastonia, and Western NC."
+  canonical="/gallery"
+  schemas={[breadcrumbSchema(crumbs)]}
+>
+  <Breadcrumbs items={crumbs} />
+  <Gallery />
+</Layout>

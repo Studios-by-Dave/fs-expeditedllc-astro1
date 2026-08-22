@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { breadcrumbSchema } from "../lib/schemas";
+
+const crumbs = [
+  { name: "Home", href: "https://www.fs-expeditedllc.com/" },
+  { name: "Privacy Policy", href: "https://www.fs-expeditedllc.com/privacy-policy" },
+];
+
+const sections = [
+  {
+    title: "Information We Collect",
+    body: "We may collect personal information you provide, such as your name, phone number, email address, and project details when you contact us or request a quote.",
+  },
+  {
+    title: "How We Use Information",
+    items: [
+      "To respond to inquiries and provide quotes",
+      "To schedule and perform hauling services",
+      "To improve our website and customer experience",
+      "To communicate about promotions or service updates (with your consent)",
+    ],
+  },
+  {
+    title: "Information Sharing",
+    body: "We do not sell your personal information. We may share information with service providers necessary to operate our business (e.g., hosting or analytics) or as required by law.",
+  },
+  {
+    title: "Data Security",
+    body: "We take reasonable measures to protect your information from unauthorized access or disclosure.",
+  },
+  {
+    title: "Your Rights",
+    body: "You may request access to, correction of, or deletion of your personal information by contacting us.",
+  },
+  {
+    title: "Contact Us",
+    body: "If you have questions about this Privacy Policy, contact us at Aldrich2577@gmail.com or (865) 364-9011.",
+  },
+];
+---
+
+<Layout
+  title="Privacy Policy — F&S Expedited LLC"
+  description="How F&S Expedited LLC collects, uses, and protects your personal information. Read our full privacy policy."
+  canonical="/privacy-policy"
+  schemas={[breadcrumbSchema(crumbs)]}
+>
+  <Breadcrumbs items={crumbs} />
+  <section class="py-12 bg-background">
+    <div class="container px-4">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-foreground tracking-wider mb-6">Privacy Policy</h1>
+        <p class="text-lg text-muted-foreground mb-10 font-sans">
+          At F&S Expedited LLC, we are committed to protecting your privacy. This Privacy Policy explains how we
+          collect, use, and safeguard your information.
+        </p>
+
+        <div class="space-y-10">
+          {
+            sections.map((section) => (
+              <div>
+                <h2 class="text-2xl font-heading font-bold text-foreground tracking-wide mb-3">{section.title}</h2>
+                {section.body && <p class="text-muted-foreground font-sans leading-relaxed">{section.body}</p>}
+                {section.items && (
+                  <ul class="list-disc pl-6 space-y-2 text-muted-foreground font-sans">
+                    {section.items.map((item) => <li>{item}</li>)}
+                  </ul>
+                )}
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-border text-sm text-muted-foreground">
+          © {new Date().getFullYear()} F&S Expedited LLC. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

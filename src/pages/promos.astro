@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { breadcrumbSchema } from "../lib/schemas";
+
+const crumbs = [
+  { name: "Home", href: "https://www.fs-expeditedllc.com/" },
+  { name: "Special Offer", href: "https://www.fs-expeditedllc.com/promos" },
+];
+---
+
+<Layout
+  title="Special Offer — 10% Off Your First Haul | F&S Expedited LLC"
+  description="Save 10% on your first dump truck hauling, debris removal, or gravel delivery with F&S Expedited LLC. Use code FS10 when you call for a free quote."
+  canonical="/promos"
+  schemas={[breadcrumbSchema(crumbs)]}
+>
+  <Breadcrumbs items={crumbs} />
+
+  <main class="bg-[#0c0c0c] text-white px-4 py-16 md:py-24">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="font-bebas text-2xl md:text-3xl text-primary tracking-widest mb-4">LIMITED TIME OFFER</p>
+      <h1 class="font-bebas text-6xl md:text-8xl leading-none mb-6">10% OFF YOUR FIRST HAUL</h1>
+      <p class="text-lg md:text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">
+        First-time customer? Get <span class="text-primary font-bold">10% off</span> your first dump truck hauling,
+        debris removal, gravel delivery, or site service. Mention the code below when you call.
+      </p>
+
+      <div class="inline-flex flex-col sm:flex-row items-center gap-4 bg-neutral-900 border border-neutral-700 rounded-xl px-8 py-6">
+        <div class="text-center sm:text-left">
+          <span class="block text-xs uppercase tracking-widest text-neutral-400">Discount Code</span>
+          <span id="discount-code" class="font-bebas text-5xl text-primary">FS10</span>
+        </div>
+        <button
+          id="copy-discount-code"
+          type="button"
+          class="bg-primary text-black font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+        >
+          Copy Code
+        </button>
+      </div>
+
+      <p class="text-sm text-neutral-500 mt-4">New customers only. Cannot be combined with other offers. Excludes emergency after-hours rates.</p>
+
+      <div class="mt-12 grid sm:grid-cols-3 gap-6 text-left">
+        <div class="bg-neutral-900/60 border border-neutral-800 rounded-xl p-6">
+          <h3 class="font-bebas text-2xl text-primary mb-2">Reliable Hauling</h3>
+          <p class="text-neutral-300 text-sm">Dump truck services you can count on, on your schedule.</p>
+        </div>
+        <div class="bg-neutral-900/60 border border-neutral-800 rounded-xl p-6">
+          <h3 class="font-bebas text-2xl text-primary mb-2">Fair Pricing</h3>
+          <p class="text-neutral-300 text-sm">Transparent estimates with no hidden fees. Save even more on your first job.</p>
+        </div>
+        <div class="bg-neutral-900/60 border border-neutral-800 rounded-xl p-6">
+          <h3 class="font-bebas text-2xl text-primary mb-2">Local &amp; Fast</h3>
+          <p class="text-neutral-300 text-sm">Serving Shelby, Gastonia, Forest City, and within 100 miles.</p>
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <a href="tel:8653649011" class="inline-block bg-primary text-black font-bold font-bebas text-3xl px-10 py-4 rounded-lg hover:bg-primary/90 transition-colors">
+          CALL (865) 364-9011 TO CLAIM
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const btn = document.getElementById("copy-discount-code");
+    const code = document.getElementById("discount-code")?.textContent?.trim() || "FS10";
+    btn?.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(code);
+        if (btn instanceof HTMLButtonElement) {
+          const original = btn.textContent;
+          btn.textContent = "Copied!";
+          setTimeout(() => (btn.textContent = original), 2000);
+        }
+      } catch {
+        /* clipboard not available */
+      }
+    });
+  </script>
+</Layout>

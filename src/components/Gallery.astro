@@ -1,0 +1,98 @@
+---
+import Icon from "./Icon.astro";
+
+const galleryImages = [
+  { url: "/assets/gallery/FS_3.jpg", alt: "F&S Expedited LLC - Professional Hauling Services", caption: "Professional dump truck hauling and expedited services for Shelby, NC and surrounding areas." },
+  { url: "/assets/gallery/FS_4.jpg", alt: "F&S Expedited LLC - Heavy Equipment", caption: "Modern fleet and experienced operators ready for any size hauling project." },
+  { url: "/assets/gallery/FS_5.jpg", alt: "F&S Expedited LLC - Job Site", caption: "On-site hauling services for construction, debris removal, and material delivery." },
+  { url: "/assets/gallery/FS_6.jpg", alt: "F&S Expedited LLC - Project Showcase", caption: "Completed projects showcasing our quality hauling services and professional workmanship." },
+  { url: "/assets/gallery/fs image1.png", alt: "F&S Expedited LLC - Dump Truck Operation", caption: "Our dump trucks in action, providing reliable material transport and hauling services." },
+  { url: "/assets/gallery/fs image2.png", alt: "F&S Expedited LLC - Site Services", caption: "Professional site preparation and land management services for construction projects." },
+  { url: "/assets/gallery/fs image3.png", alt: "F&S Expedited LLC - Material Delivery", caption: "Quality material delivery including gravel, sand, and soil for various construction needs." },
+  { url: "/assets/gallery/fs image4.png", alt: "F&S Expedited LLC - Emergency Services", caption: "Emergency expedited hauling services available when you need them most." },
+  { url: "/assets/gallery/fs image5.png", alt: "F&S Expedited LLC - Fleet Operations", caption: "Our well-maintained fleet ready to handle any hauling challenge with precision and efficiency." },
+  { url: "/assets/gallery/fs-new1.png", alt: "F&S Expedited LLC - Project Completion", caption: "Recently completed project showcasing our professional hauling services and attention to detail." },
+  { url: "/assets/gallery/fs-new2.png", alt: "F&S Expedited LLC - Equipment Showcase", caption: "Our modern equipment and fleet in action, delivering reliable hauling solutions." },
+  { url: "/assets/gallery/fs-new4.png", alt: "F&S Expedited LLC - Material Transport", caption: "Efficient material transport services for construction and landscaping projects." },
+  { url: "/assets/gallery/fs-new5.png", alt: "F&S Expedited LLC - Team Excellence", caption: "Our experienced team delivering exceptional service on every project." },
+  { url: "/assets/gallery/fs-new6.png", alt: "F&S Expedited LLC - Project Success", caption: "Another successful project completed with precision and professional workmanship." },
+  { url: "/assets/gallery/fs-new7.png", alt: "F&S Expedited LLC - Quality Service", caption: "Demonstrating our commitment to quality service and customer satisfaction." },
+  { url: "/assets/joe-and-luke-owners.jpg", alt: "F&S Expedited LLC - Owners Joe Alrich and Luke Tutterow", caption: "Meet our owners Joe Alrich and Luke Tutterow, dedicated to providing exceptional hauling services." },
+  { url: "/assets/gallery/fleet-sterling-trucks.jpg", alt: "F&S Expedited LLC - Sterling dump truck fleet", caption: "Our Sterling dump trucks ready for reliable hauling and material transport." },
+  { url: "/assets/gallery/kenworth-w990-jobsite.jpg", alt: "F&S Expedited LLC - Kenworth W990 jobsite truck", caption: "The Kenworth W990 PaPaw truck staged and ready at the jobsite." },
+  { url: "/assets/gallery/papaw-truck-convoy.jpg", alt: "F&S Expedited LLC - dump truck convoy", caption: "F&S trucks lined up and ready to keep projects moving." },
+  { url: "/assets/gallery/papaw-truck-closeup.jpg", alt: "F&S Expedited LLC - PaPaw dump truck closeup", caption: "Heavy-duty dump truck equipment prepared for hauling service." },
+  { url: "/assets/gallery/gravel-jobsite-excavator.jpg", alt: "F&S Expedited LLC - gravel jobsite with excavator", caption: "Gravel delivery and site preparation support for active jobsites." },
+  { url: "/assets/gallery/excavator-loading-dump-truck.jpg", alt: "F&S Expedited LLC - excavator loading dump truck", caption: "Site services in action with heavy equipment loading material." },
+  { url: "/assets/gallery/night-material-hauling.jpg", alt: "F&S Expedited LLC - night material hauling", caption: "Night hauling service when projects need material moved after hours." },
+  { url: "/assets/gallery/gravel-delivery-rocks-truck.jpg", alt: "F&S Expedited LLC - gravel delivery near rock material", caption: "Gravel and aggregate delivery for construction and site projects." },
+  { url: "/assets/gallery/gravel-driveway-delivery.jpg", alt: "F&S Expedited LLC - gravel driveway delivery", caption: "Finished gravel delivery for a driveway and property access area." },
+  { url: "/assets/gallery/night-excavator-loading.jpg", alt: "F&S Expedited LLC - night excavator loading material", caption: "Material loading and hauling support for urgent nighttime work." },
+];
+---
+
+<section id="gallery" class="section-padding bg-background">
+  <div class="container px-4">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-primary font-semibold tracking-widest text-sm uppercase font-sans">Project Gallery</span>
+      <h2 class="mt-4 text-4xl md:text-5xl lg:text-5xl font-heading font-bold text-foreground tracking-wider">Gallery</h2>
+      <p class="mt-4 text-muted-foreground text-lg font-sans">Browse through our completed hauling projects and see the quality of our work.</p>
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+      <div class="border border-border overflow-hidden rounded-xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+          {
+            galleryImages.map((image) => (
+              <button type="button" class="gallery-thumb relative group cursor-pointer text-left" data-src={image.url} data-caption={image.caption}>
+                <div class="aspect-square overflow-hidden rounded-lg border border-border">
+                  <img src={image.url} alt={image.alt} loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                </div>
+                <span class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 inline-flex items-center justify-center w-8 h-8 rounded-md bg-white/10 text-white border border-white/20">
+                  <Icon name="arrow-right" class="w-4 h-4" />
+                </span>
+              </button>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <p class="text-primary font-semibold text-lg mb-2">More Images Coming Soon!</p>
+      <p class="text-muted-foreground text-sm font-sans">Need hauling services? <a href="/contact" class="text-primary hover:underline font-semibold">Contact us</a> for a free quote on your next project.</p>
+    </div>
+  </div>
+
+  <div id="gallery-modal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
+    <div class="relative max-w-4xl max-h-[90vh]">
+      <img id="gallery-modal-img" src="" alt="" class="w-full h-full object-contain rounded-lg" />
+      <div id="gallery-modal-caption" class="absolute bottom-4 left-4 right-4 bg-black/80 text-white p-4 rounded-lg text-sm"></div>
+      <button type="button" id="gallery-modal-close" class="absolute top-4 right-4 bg-white/10 text-white border border-white/20 hover:bg-white/20 rounded-md px-3 py-1 text-sm">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("gallery-modal");
+    const modalImg = document.getElementById("gallery-modal-img") as HTMLImageElement;
+    const modalCaption = document.getElementById("gallery-modal-caption");
+    const closeBtn = document.getElementById("gallery-modal-close");
+    document.querySelectorAll<HTMLButtonElement>(".gallery-thumb").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        modalImg.src = btn.dataset.src || "";
+        modalImg.alt = btn.getAttribute("alt") || "";
+        if (modalCaption) modalCaption.textContent = btn.dataset.caption || "";
+        modal?.classList.remove("hidden");
+        modal?.classList.add("flex");
+      });
+    });
+    const closeModal = () => {
+      modal?.classList.add("hidden");
+      modal?.classList.remove("flex");
+    };
+    closeBtn?.addEventListener("click", closeModal);
+    modal?.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+  </script>
+</section>

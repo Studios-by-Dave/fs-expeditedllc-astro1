@@ -50,6 +50,11 @@ import { nav, site } from "../data/site";
               </div>
             );
           }
+          if (item.label === "Blog") {
+            return (
+              <a href={item.href} class="rounded-md px-3 py-2 text-[15px] font-semibold text-cyan-300 hover:text-cyan-200">{item.label}</a>
+            );
+          }
           return (
             <a href={item.href} class="rounded-md px-3 py-2 text-sm font-medium text-foreground hover:text-primary">{item.label}</a>
           );
@@ -86,6 +91,9 @@ import { nav, site } from "../data/site";
                 </div>
               </div>
             );
+          }
+          if (item.label === "Blog") {
+            return <a href={item.href} class="px-2 py-2 text-[15px] font-semibold text-cyan-300 hover:text-cyan-200 border-b border-border">{item.label}</a>;
           }
           return <a href={item.href} class="px-2 py-2 text-sm font-medium text-foreground hover:text-primary border-b border-border">{item.label}</a>;
         })

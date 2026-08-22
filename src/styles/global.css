@@ -399,3 +399,15 @@
 .animate-shake {
   animation: shake 0.3s ease-in-out;
 }
+
+@keyframes flag-wave {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(1.2deg) scale(1.03); }
+  50% { transform: rotate(-0.8deg) scale(1.02); }
+  75% { transform: rotate(1deg) scale(1.03); }
+}
+
+.animate-flag-wave {
+  animation: flag-wave 3.2s ease-in-out infinite;
+  transform-origin: left center;
+}

@@ -15,7 +15,7 @@ const redirects = {
   '/services/site-prep': '/services/site-services/site-prep',
   '/services/land-clearing': '/services/site-services/land-clearing',
   '/services/commercial-hauling': '/services/emergency-expedited/commercial-hauling',
-  '/services/dump-truck-hauling': '/services/emergency-expedited/dump-truck-hauling',
+  '/services/dump-truck-hauling': '/services/dump-trucks-hauling-services/dump-truck-hauling',
   '/services/gravel-delivery': '/services/material-delivery/gravel-delivery',
   '/services/sand-delivery': '/services/material-delivery/sand-delivery',
   '/services/soil-delivery': '/services/material-delivery/soil-delivery',

@@ -62,6 +62,17 @@ import { nav, site } from "../data/site";
       }
     </nav>
 
+    <div class="hidden lg:flex items-center gap-4 ml-auto shrink-0">
+      <a href={`tel:${site.phoneJoe.tel}`} class="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors">
+        <Icon name="phone" class="w-4 h-4 text-green-500" />
+        {site.phoneJoe.display}
+      </a>
+      <a href={`tel:${site.phoneLuke.tel}`} class="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors">
+        <Icon name="phone" class="w-4 h-4 text-green-500" />
+        {site.phoneLuke.display}
+      </a>
+    </div>
+
     <button type="button" class="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-foreground" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
       <Icon name="menu" class="w-6 h-6" />
     </button>

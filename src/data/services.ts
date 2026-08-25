@@ -28,7 +28,7 @@ export interface Service {
 export const serviceCategories: ServiceCategory[] = [
   {
     slug: "dump-trucks-hauling-services",
-    title: "Dump Trucks — All Expedited Services",
+    title: "Dump Truck Services",
     description: "Complete dump truck hauling and comprehensive site services.",
     icon: "truck",
     heroImage: "/assets/hero-truck.jpg",
@@ -71,8 +71,8 @@ export const serviceCategories: ServiceCategory[] = [
 export const services: Service[] = [
   {
     slug: "dump-truck-hauling",
-    title: "Dump Truck Hauling",
-    category: "emergency-expedited",
+    title: "Dump Truck Services",
+    category: "dump-trucks-hauling-services",
     description:
       "Heavy-duty dump truck services for construction sites, commercial projects, and residential needs. On-time, every time.",
     features: ["Bulk Material Transport", "Site-to-Site Hauling", "Flexible Scheduling"],

@@ -2,17 +2,24 @@
 import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.astro";
 import ContactCTA from "../components/ContactCTA.astro";
+import { site } from "../data/site";
 
 const highlights = [
-  { icon: "truck", title: "Dump Truck Hauling", desc: "Bulk material transport, site-to-site hauling, and flexible scheduling." },
+  { icon: "truck", title: "Dump Truck Services", desc: "Bulk material transport, site-to-site hauling, and flexible scheduling." },
   { icon: "mountain", title: "Gravel & Material Delivery", desc: "Gravel, sand, soil, and aggregate delivered to your job site." },
   { icon: "construction", title: "Site Services", desc: "Land clearing, grading, debris removal, and prep work." },
   { icon: "zap", title: "Emergency Expedited", desc: "Same-day and next-day dispatch when the job can't wait." },
 ];
+
+const testimonials = [
+  { name: "Mike R.", location: "Charlotte, NC", text: "On-time, every time. F&S keeps our projects moving without fail." },
+  { name: "Sarah K.", location: "Gastonia, NC", text: "Fast, reliable, and fair pricing. Exactly what we need on every job." },
+  { name: "David L.", location: "Forest City, NC", text: "Dependable hauling with no surprises. Highly recommend." },
+];
 ---
 
 <Layout
-  title="F&S Expedited LLC — Dump Truck Hauling & Material Delivery | Shelby, NC"
+  title="F&S Expedited LLC — Dump Truck Services & Material Delivery | Shelby, NC"
   description="Expedited dump truck hauling, gravel delivery, debris removal & site services within 1-hour of Shelby, NC. Serving 50+ cities. Licensed & insured."
   canonical="/"
 >
@@ -31,12 +38,17 @@ const highlights = [
         </h1>
         <p class="mt-6 text-xl text-gray-200">F&amp;S Expedited keeps Carolina job sites moving with fast, reliable hauling, material delivery, and site services.</p>
         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/services" class="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-            <Icon name="truck" class="w-5 h-5" /> Explore Services
+          <a href={`tel:${site.phoneJoe.tel}`} class="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary/90 transition-colors">
+            <Icon name="phone" class="w-5 h-5 text-green-500" /> Call Joe: {site.phoneJoe.display}
           </a>
-          <a href="/service-area" class="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-secondary/90 transition-colors">
-            <Icon name="map-pin" class="w-5 h-5" /> Service Area
+          <a href={`tel:${site.phoneLuke.tel}`} class="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-8 py-4 rounded-lg font-bold text-lg hover:bg-secondary/90 transition-colors">
+            <Icon name="phone" class="w-5 h-5 text-green-500" /> Call Luke: {site.phoneLuke.display}
           </a>
+        </div>
+        <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-gray-400">
+          <span class="flex items-center gap-2"><Icon name="check-circle" class="w-4 h-4 text-green-500" /> Licensed &amp; Insured</span>
+          <span class="flex items-center gap-2"><Icon name="check-circle" class="w-4 h-4 text-green-500" /> Same-Day Dispatch</span>
+          <span class="flex items-center gap-2"><Icon name="check-circle" class="w-4 h-4 text-green-500" /> 100-Mile Radius</span>
         </div>
       </div>
     </div>
@@ -46,14 +58,46 @@ const highlights = [
     <div class="container mx-auto px-4">
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {highlights.map((h) => (
-          <div class="bg-card border border-border rounded-2xl p-6 hover-card-lift">
+          <div class="bg-card border border-border rounded-2xl p-6 hover-card-lift flex flex-col">
             <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
               <Icon name={h.icon} class="w-6 h-6" />
             </div>
             <h2 class="text-xl font-heading font-semibold text-foreground">{h.title}</h2>
-            <p class="mt-2 text-sm text-muted-foreground">{h.desc}</p>
+            <p class="mt-2 text-sm text-muted-foreground flex-1">{h.desc}</p>
+            <a href={`tel:${site.phoneJoe.tel}`} class="mt-4 inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline">
+              Call for a Quote <Icon name="arrow-right" class="w-4 h-4" />
+            </a>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gradient-card">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-primary font-bold tracking-widest text-base md:text-lg uppercase font-sans">Trusted by Contractors</span>
+        <h2 class="mt-4 text-4xl md:text-5xl font-heading font-bold text-foreground tracking-wider">WHY THEY CALL F&amp;S</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-10">
+        {testimonials.map((t) => (
+          <div class="bg-card border border-border rounded-xl p-6">
+            <div class="flex gap-1 mb-3">
+              {[...Array(5)].map(() => <Icon name="star" class="w-4 h-4 text-yellow-500" />)}
+            </div>
+            <p class="text-muted-foreground italic mb-4">"{t.text}"</p>
+            <p class="text-foreground font-semibold">{t.name}</p>
+            <p class="text-sm text-muted-foreground">{t.location}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+        <span class="flex items-center gap-2"><Icon name="check-circle" class="w-4 h-4 text-green-500" /> Licensed &amp; Insured</span>
+        <span class="flex items-center gap-2"><Icon name="check-circle" class="w-4 h-4 text-green-500" /> 50+ Cities Served</span>
+        <span class="flex items-center gap-2"><Icon name="check-circle" class="w-4 h-4 text-green-500" /> Modern Fleet</span>
+        <span class="flex items-center gap-2"><Icon name="check-circle" class="w-4 h-4 text-green-500" /> Owner-Operated</span>
       </div>
     </div>
   </section>

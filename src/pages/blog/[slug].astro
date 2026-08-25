@@ -1,0 +1,108 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Icon from "../../components/Icon.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import { posts, getPost, getPostsByCategory } from "../../data/posts";
+import { breadcrumbSchema } from "../../lib/schemas";
+
+export function getStaticPaths() {
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const related = getPostsByCategory(post.category)
+  .filter((p) => p.slug !== post.slug)
+  .slice(0, 3);
+
+const crumbs = [
+  { name: "Home", url: "https://www.fs-expeditedllc.com/" },
+  { name: "Blog", url: "https://www.fs-expeditedllc.com/blog" },
+  { name: post.title, url: `https://www.fs-expeditedllc.com/blog/${post.slug}` },
+];
+
+const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.title,
+  description: post.metaDescription,
+  datePublished: post.date,
+  author: { "@type": "Organization", name: post.author },
+  publisher: { "@type": "Organization", name: "F&S Expedited LLC" },
+  mainEntityOfPage: `https://www.fs-expeditedllc.com/blog/${post.slug}`,
+};
+---
+
+<Layout
+  title={post.metaTitle}
+  description={post.metaDescription}
+  canonical={`/blog/${post.slug}`}
+  image={post.image}
+  schemas={[breadcrumbSchema(crumbs), articleSchema]}
+>
+  <Breadcrumbs items={crumbs} />
+
+  <article class="py-12 bg-background">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <div class="mb-6 flex items-center gap-3 text-sm">
+        <span class="text-xs font-semibold uppercase tracking-widest text-primary-foreground bg-primary/90 px-3 py-1 rounded-full">{post.category}</span>
+        <span class="text-muted-foreground">{formatDate(post.date)}</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-heading font-bold text-foreground tracking-tight">{post.title}</h1>
+      <p class="mt-4 text-lg text-muted-foreground">{post.excerpt}</p>
+
+      {
+        post.image && (
+          <img src={post.image} alt={post.title} class="w-full h-64 md:h-96 object-cover rounded-2xl border border-border my-8" loading="lazy" />
+        )
+      }
+
+      <div class="prose-brand">
+        {
+          post.body.map((section) => (
+            <section class="mb-8">
+              {section.heading && <h2 class="text-2xl font-heading font-bold text-foreground mb-4">{section.heading}</h2>}
+              {section.paragraphs.map((p) => <p class="text-lg text-muted-foreground leading-relaxed mb-4">{p}</p>)}
+            </section>
+          ))
+        }
+      </div>
+
+      <div class="mt-10 flex items-center gap-3 border-t border-border pt-8">
+        <Icon name="truck" class="w-8 h-8 text-primary" />
+        <div>
+          <p class="font-heading font-semibold text-foreground">F&S Expedited LLC</p>
+          <p class="text-sm text-muted-foreground">Expedited dump truck hauling &amp; site services across Western NC</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  {
+    related.length > 0 && (
+      <section class="section-padding bg-gradient-card">
+        <div class="container mx-auto px-4">
+          <h2 class="text-2xl font-heading font-bold text-center text-foreground mb-8">More From The Blog</h2>
+          <div class="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+            {related.map((r) => (
+              <a href={`/blog/${r.slug}`} class="bg-card border border-border rounded-xl p-6 hover-card-lift">
+                <span class="text-xs font-semibold uppercase tracking-widest text-primary">{r.category}</span>
+                <h3 class="mt-2 font-heading font-semibold text-foreground">{r.title}</h3>
+                <p class="mt-2 text-sm text-muted-foreground">{r.excerpt}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <ContactCTA />
+</Layout>

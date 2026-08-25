@@ -39,7 +39,7 @@ export const serviceAreas: ServiceArea[] = [
     county: "Cleveland County",
     heroImage: "/assets/Shelby_4.jpg",
     heroIcon: "map-pin",
-    metaTitle: "Dump Truck Hauling Services Shelby NC | F&S Expedited LLC | Local Experts",
+    metaTitle: "Dump Truck Services Shelby NC | F&S Expedited LLC | Local Experts",
     metaDescription:
       "Dump truck hauling services in Shelby NC from F&S Expedited LLC. Same-day gravel delivery, debris removal & site prep across Cleveland County. Call for a fast free quote!",
     intro:
@@ -55,7 +55,7 @@ export const serviceAreas: ServiceArea[] = [
       { title: "Immediate Availability", desc: "Fleet ready for dispatch - no travel time to reach your job site" },
     ],
     services: [
-      { name: "Dump Truck Hauling", desc: "Same-day dump truck and dump truck delivery service for Shelby and Cleveland County projects" },
+      { name: "Dump Truck Services", desc: "Same-day dump truck and dump truck delivery service for Shelby and Cleveland County projects" },
       { name: "Gravel & Stone Delivery", desc: "Local suppliers, fast gravel delivery to any Shelby location — road base, stone, and aggregate" },
       { name: "Construction Debris Removal", desc: "Quick cleanup and haul-away for Shelby construction sites and demolition projects" },
       { name: "Dirt & Material Delivery", desc: "Fill dirt, topsoil, sand, and material delivery for Shelby landscaping and grading" },
@@ -100,7 +100,7 @@ export const serviceAreas: ServiceArea[] = [
     county: "Rutherford County",
     heroImage: "/assets/forest city nc_1.jpeg",
     heroIcon: "map-pin",
-    metaTitle: "Dump Truck Hauling Services Forest City NC | F&S Expedited LLC | Rutherford County",
+    metaTitle: "Dump Truck Services Forest City NC | F&S Expedited LLC | Rutherford County",
     metaDescription:
       "Professional dump truck hauling services in Forest City, NC. Residential and commercial hauling, gravel delivery, site preparation for Rutherford County. Call for quote!",
     intro:
@@ -162,7 +162,7 @@ export const serviceAreas: ServiceArea[] = [
     county: "Gaston County",
     heroImage: "/assets/gastonia nc_4.png",
     heroIcon: "map-pin",
-    metaTitle: "Dump Truck Hauling Services Gastonia NC | F&S Expedited LLC | 30-Minute Response",
+    metaTitle: "Dump Truck Services Gastonia NC | F&S Expedited LLC | 30-Minute Response",
     metaDescription:
       "Fastest dump truck hauling services in Gastonia, NC. 30-minute response time, industrial projects, cost-effective hauling for Gaston County. Immediate service available!",
     intro:
@@ -223,7 +223,7 @@ export const serviceAreas: ServiceArea[] = [
     county: "Buncombe County",
     heroImage: "/assets/Asheville nc_header1.jpg",
     heroIcon: "map-pin",
-    metaTitle: "Dump Truck Hauling Services Asheville NC | F&S Expedited LLC | Mountain Terrain Specialists",
+    metaTitle: "Dump Truck Services Asheville NC | F&S Expedited LLC | Mountain Terrain Specialists",
     metaDescription:
       "Mountain terrain dump truck hauling specialists in Asheville, NC. Expert hauling for challenging terrain, weather considerations, and specialized Buncombe County projects. Call for mountain hauling quote!",
     intro:

@@ -77,7 +77,8 @@ def get_subcategory_urls():
         'material-delivery': ['gravel-delivery', 'sand-delivery', 'soil-delivery'],
         'site-services': ['land-clearing', 'site-prep', 'debris-removal', 'aggregate-transport', 
                          'retaining-walls', 'underground-utilities', 'land-grading'],
-        'emergency-expedited': ['emergency-expedited', 'commercial-hauling', 'dump-truck-hauling']
+        'dump-trucks-hauling-services': ['dump-truck-hauling'],
+        'emergency-expedited': ['emergency-expedited', 'commercial-hauling']
     }
     
     urls = []
@@ -156,7 +157,7 @@ def main():
         # Emergency expedited sub-services
         ('/services/emergency-expedited/emergency-expedited', '2026-06-18'),
         ('/services/emergency-expedited/commercial-hauling', '2026-06-18'),
-        ('/services/emergency-expedited/dump-truck-hauling', '2026-06-18')
+        ('/services/dump-trucks-hauling-services/dump-truck-hauling', '2026-06-18')
     ]
     
     # Add blog article URLs

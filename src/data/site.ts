@@ -37,10 +37,7 @@ export const nav: NavItem[] = [
     dropdown: [
       ...serviceCategories.map((c) => ({ label: c.title, href: `/services/${c.slug}` })),
       { label: "", href: "", divider: true },
-      { label: "Gravel Delivery", href: "/services/material-delivery/gravel-delivery", featured: true },
-      { label: "Dump Truck Services", href: "/services/dump-trucks-hauling-services/dump-truck-hauling", featured: true },
-      { label: "Debris Removal", href: "/services/site-services/debris-removal", featured: true },
-      { label: "All Services", href: "/services", featured: true },
+      { label: "View All Services", href: "/services", featured: true },
     ],
   },
   {

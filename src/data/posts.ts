@@ -225,23 +225,110 @@ export const posts: BlogPost[] = [
     metaTitle: "Soil vs Gravel Delivery — Which Do You Need? | F&S NC",
     metaDescription:
       "Unsure whether your Shelby, NC project needs soil or gravel delivery? Our side-by-side breakdown helps you choose the right base material.",
-    date: "2026-07-12",
+    date: "2026-06-18",
     author: "F&S Expedited LLC",
     category: "Material Delivery",
     excerpt:
-      "Gravel and soil solve different problems. A quick comparison to help you order the right material the first time.",
+      "Whether you're building a new driveway, preparing a construction site, or transforming your landscape, choosing the right materials can make or break your project.",
     image: "/assets/hero-truck.jpg",
     body: [
       {
         paragraphs: [
-          "Reach for gravel when you need structure and drainage: driveways, road base, french drains, and stabilizing soft ground. Reach for soil when you need growth and grade: lawns, gardens, raised beds, and top dressing.",
-          "Many projects need both — a gravel base under a soil-topped landscape bed, for example. Knowing which layer does what saves you from costly do-overs.",
+          "Whether you're building a new driveway, preparing a construction site, or transforming your landscape, choosing the right materials can make or break your project. Two of the most commonly delivered materials are soil and gravel—but many property owners aren't always sure which one they need.",
+          "At F&S Expedited LLC, we provide fast, reliable soil delivery and gravel delivery services throughout Shelby, NC and surrounding areas. Understanding the differences between these materials can help you save time, money, and frustration while ensuring your project gets off to the right start.",
         ],
       },
       {
-        heading: "We'll Help You Spec It",
+        heading: "Understanding Soil Delivery",
         paragraphs: [
-          "Not sure which your job calls for? Tell us the end goal and F&S Expedited will recommend the right product — crushed stone, pea gravel, fill dirt, topsoil, or a custom blend — and deliver it exactly where your crew needs it.",
+          "Soil is the foundation of nearly every landscaping and construction project. Different types of soil serve different purposes, making it important to select the right material before scheduling a delivery.",
+        ],
+      },
+      {
+        heading: "Common Uses for Delivered Soil",
+        paragraphs: [
+          "Lawn installation and repair, garden bed preparation, tree and shrub planting, grading and leveling yards, filling low spots and erosion areas, and site preparation for landscaping projects.",
+          "Quality soil helps improve drainage, supports healthy plant growth, and creates a stable foundation for outdoor improvements. Having bulk soil delivered directly to your property eliminates the hassle of multiple trips to a garden center and ensures you get the volume you need.",
+        ],
+      },
+      {
+        heading: "Signs You Need Soil Delivery",
+        paragraphs: [
+          "You may benefit from soil delivery if your yard has uneven or sunken areas, you're installing new grass or landscaping, construction has left bare or damaged ground, you need fill dirt for grading or leveling, or you're creating raised garden beds.",
+          "Professional soil delivery ensures the material arrives where you need it, when you need it, helping your project stay on schedule.",
+        ],
+      },
+      {
+        heading: "When Gravel Delivery Is the Better Choice",
+        paragraphs: [
+          "While soil supports growth and landscaping, gravel provides strength, drainage, and durability. Gravel is one of the most versatile materials used in residential and commercial projects.",
+        ],
+      },
+      {
+        heading: "Popular Uses for Gravel Delivery",
+        paragraphs: [
+          "Driveway installation and repair, parking areas, construction site access roads, drainage systems, foundation support, walkways and pathways, and decorative landscaping.",
+          "Gravel offers excellent drainage characteristics and long-lasting performance, making it ideal for high-traffic areas and projects requiring a stable base.",
+        ],
+      },
+      {
+        heading: "Benefits of Gravel Delivery",
+        paragraphs: [
+          "Many property owners choose gravel because it reduces mud and standing water, creates durable surfaces, requires minimal maintenance, improves site accessibility, and supports heavy equipment and vehicles.",
+          "With professional gravel delivery, large quantities can be transported directly to your property without the need for expensive equipment rentals or multiple pickup trips.",
+        ],
+      },
+      {
+        heading: "Projects That Need Both Soil and Gravel",
+        paragraphs: [
+          "Some of the most successful property improvements actually require both materials.",
+        ],
+      },
+      {
+        heading: "New Driveways",
+        paragraphs: [
+          "Gravel provides the base and driving surface, while soil is often needed to grade surrounding areas and improve drainage.",
+        ],
+      },
+      {
+        heading: "New Home Construction",
+        paragraphs: [
+          "Gravel helps create stable foundations and access roads, while soil is used for final grading and landscaping.",
+        ],
+      },
+      {
+        heading: "Drainage Improvements",
+        paragraphs: [
+          "Gravel allows water to flow properly, while soil helps shape and direct runoff around the property.",
+        ],
+      },
+      {
+        heading: "Commercial Site Development",
+        paragraphs: [
+          "Many commercial projects require bulk deliveries of both materials throughout different phases of construction.",
+          "Coordinating soil delivery and gravel delivery through one trusted hauling company simplifies logistics and helps keep projects moving efficiently.",
+        ],
+      },
+      {
+        heading: "Why Professional Material Delivery Matters",
+        paragraphs: [
+          "Ordering materials is only half the battle. Timely delivery can significantly impact project timelines and costs.",
+          "Professional material delivery services help by eliminating transportation headaches, delivering bulk quantities efficiently, reducing labor costs, keeping projects on schedule, and ensuring materials are placed in the proper location.",
+          "At F&S Expedited LLC, we understand that every hour matters on a job site. That's why we focus on fast turnaround times, reliable scheduling, and dependable service for homeowners, contractors, and businesses throughout the Shelby area. Our experienced team delivers materials safely and efficiently so you can focus on completing your project.",
+        ],
+      },
+      {
+        heading: "Choosing the Right Delivery Partner",
+        paragraphs: [
+          "When searching for soil delivery or gravel delivery, look for a company that offers fast response times, competitive pricing, reliable scheduling, experienced operators, licensed and insured services, and flexible delivery options.",
+          "The right hauling partner can save you valuable time while ensuring your materials arrive exactly when and where they're needed.",
+        ],
+      },
+      {
+        heading: "Schedule Your Soil or Gravel Delivery Today",
+        paragraphs: [
+          "Whether you're tackling a landscaping project, building a driveway, or preparing a construction site, F&S Expedited LLC is ready to help. We provide dependable soil delivery and gravel delivery services throughout Shelby, NC and surrounding communities with the speed and reliability your project deserves.",
+          "Contact us today for a free quote and let our team deliver the materials you need—on time, every time.",
         ],
       },
     ],

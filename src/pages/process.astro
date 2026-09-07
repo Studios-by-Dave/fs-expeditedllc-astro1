@@ -11,10 +11,10 @@ const crumbs = [
 ];
 
 const steps = [
-  { icon: "clipboard", step: "01", title: "Request a Quote", description: "Give us a call. We'll assess your hauling needs and provide a transparent, no-obligation estimate." },
-  { icon: "truck", step: "02", title: "Schedule & Dispatch", description: "We confirm your timeline and dispatch the right equipment for your job — same-day available." },
-  { icon: "shield", step: "03", title: "Haul & Deliver", description: "Our experienced operators handle the load safely and efficiently, on schedule." },
-  { icon: "check", step: "04", title: "Job Complete", description: "We confirm delivery, clean up, and make sure you're 100% satisfied with the work." },
+  { icon: "clipboard", step: "01", title: "Request a Quote", description: "Give us a call. We'll assess your hauling needs and provide a transparent, no-obligation estimate.", href: "/contact" },
+  { icon: "truck", step: "02", title: "Schedule & Dispatch", description: "We confirm your timeline and dispatch the right equipment for your job — same-day available.", href: "/services" },
+  { icon: "shield", step: "03", title: "Haul & Deliver", description: "Our experienced operators handle the load safely and efficiently, on schedule.", href: "/services/dump-trucks-hauling-services" },
+  { icon: "check", step: "04", title: "Job Complete", description: "We confirm delivery, clean up, and make sure you're 100% satisfied with the work.", href: "/reviews" },
 ];
 ---
 
@@ -35,15 +35,15 @@ const steps = [
       <div class="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
         {
           steps.map((item, index) => (
-            <div class="relative text-center group">
+            <a href={item.href} class="relative text-center group block">
               {index < steps.length - 1 && <div class="hidden md:block absolute top-10 left-1/2 w-full h-px bg-border" />}
               <div class="relative z-10 w-20 h-20 mx-auto bg-card border-2 border-border flex items-center justify-center group-hover:border-green-500 transition-colors duration-300">
                 <Icon name={item.icon} class="w-8 h-8 text-green-500" />
               </div>
               <span class="inline-block mt-4 text-sm font-bold text-green-500 tracking-widest font-sans">STEP {item.step}</span>
-              <h3 class="mt-2 font-heading text-xl font-bold text-foreground tracking-wide">{item.title}</h3>
+              <h3 class="mt-2 font-heading text-xl font-bold text-foreground tracking-wide group-hover:text-primary">{item.title}</h3>
               <p class="mt-2 text-base text-muted-foreground leading-relaxed font-sans">{item.description}</p>
-            </div>
+            </a>
           ))
         }
       </div>

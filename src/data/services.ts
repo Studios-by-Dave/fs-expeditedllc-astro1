@@ -87,7 +87,7 @@ export const services: Service[] = [
       "Fully licensed and insured",
     ],
     icon: "truck",
-    heroImage: "/assets/hero-truck.jpg",
+    heroImage: "/assets/gallery/papaw-truck-closeup.jpg",
   },
   {
     slug: "gravel-delivery",
@@ -107,7 +107,7 @@ export const services: Service[] = [
       "Fast turnaround on orders",
     ],
     icon: "mountain",
-    heroImage: "/assets/hero-truck.jpg",
+    heroImage: "/assets/gallery/gravel-delivery-rocks-truck.jpg",
   },
   {
     slug: "debris-removal",
@@ -127,7 +127,7 @@ export const services: Service[] = [
       "Competitive flat-rate and per-load pricing",
     ],
     icon: "trash",
-    heroImage: "/assets/hero-truck.jpg",
+    heroImage: "/assets/gallery/excavator-loading-dump-truck.jpg",
   },
   {
     slug: "aggregate-transport",
@@ -147,7 +147,7 @@ export const services: Service[] = [
       "Dedicated project management support",
     ],
     icon: "package",
-    heroImage: "/assets/hero-truck.jpg",
+    heroImage: "/assets/gallery/fleet-sterling-trucks.jpg",
   },
   {
     slug: "emergency-expedited",
@@ -167,7 +167,7 @@ export const services: Service[] = [
       "No surprise fees — transparent pricing",
     ],
     icon: "zap",
-    heroImage: "/assets/hero-truck.jpg",
+    heroImage: "/assets/gallery/night-material-hauling.jpg",
   },
   {
     slug: "commercial-hauling",
@@ -187,7 +187,7 @@ export const services: Service[] = [
       "Proven track record with commercial clients",
     ],
     icon: "hardhat",
-    heroImage: "/assets/hero-truck.jpg",
+    heroImage: "/assets/gallery/kenworth-w990-jobsite.jpg",
   },
   {
     slug: "site-prep",
@@ -207,7 +207,7 @@ export const services: Service[] = [
       "Coordination with your construction timeline",
     ],
     icon: "construction",
-    heroImage: "/assets/hero-truck.jpg",
+    heroImage: "/assets/gallery/gravel-jobsite-excavator.jpg",
   },
   {
     slug: "land-clearing",
@@ -227,7 +227,7 @@ export const services: Service[] = [
       "Preparation for construction or landscaping",
     ],
     icon: "trees",
-    heroImage: "/assets/hero-truck.jpg",
+    heroImage: "/assets/gallery/excavator-loading-dump-truck.jpg",
   },
   {
     slug: "retaining-walls",
@@ -247,7 +247,7 @@ export const services: Service[] = [
       "Warranty on workmanship",
     ],
     icon: "shield",
-    heroImage: "/assets/hero-truck.jpg",
+    heroImage: "/assets/gallery/fs-new4.png",
   },
   {
     slug: "underground-utilities",
@@ -267,7 +267,7 @@ export const services: Service[] = [
       "Complete project documentation",
     ],
     icon: "wrench",
-    heroImage: "/assets/hero-truck.jpg",
+    heroImage: "/assets/gallery/excavator-loading-dump-truck.jpg",
   },
   {
     slug: "land-grading",
@@ -286,7 +286,7 @@ export const services: Service[] = [
       "Compliance with drainage requirements",
     ],
     icon: "layers",
-    heroImage: "/assets/hero-truck.jpg",
+    heroImage: "/assets/service locations/shelby/shelby_nc_drone_1.webp",
   },
   {
     slug: "sand-delivery",
@@ -305,7 +305,7 @@ export const services: Service[] = [
       "Competitive pricing",
     ],
     icon: "mountain",
-    heroImage: "/assets/hero-truck.jpg",
+    heroImage: "/assets/gallery/gravel-driveway-delivery.jpg",
   },
   {
     slug: "soil-delivery",
@@ -324,7 +324,7 @@ export const services: Service[] = [
       "Timely delivery scheduling",
     ],
     icon: "mountain",
-    heroImage: "/assets/hero-truck.jpg",
+    heroImage: "/assets/material-delivery.png",
   },
 ];
 

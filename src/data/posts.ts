@@ -31,7 +31,7 @@ export const posts: BlogPost[] = [
     category: "Hauling",
     excerpt:
       "Why a Shelby-based hauling partner beats out-of-town carriers for Charlotte and Cleveland County job sites — and how our expedited model keeps projects moving.",
-    image: "/assets/hero-truck.jpg",
+    image: "/assets/gallery/papaw-truck-convoy.jpg",
     body: [
       {
         paragraphs: [
@@ -65,7 +65,7 @@ export const posts: BlogPost[] = [
     category: "Commercial",
     excerpt:
       "Downtime costs manufacturers more than a late load. Here's how our expedited dispatch model protects production schedules.",
-    image: "/assets/hero-truck.jpg",
+    image: "/assets/gallery/fleet-sterling-trucks.jpg",
     body: [
       {
         paragraphs: [
@@ -93,7 +93,7 @@ export const posts: BlogPost[] = [
     category: "Hauling",
     excerpt:
       "A late load doesn't just slow one task — it backs up your whole crew. Expedited hauling is the cheapest insurance against cascade delays.",
-    image: "/assets/hero-truck.jpg",
+    image: "/assets/gallery/night-material-hauling.jpg",
     body: [
       {
         paragraphs: [
@@ -121,7 +121,7 @@ export const posts: BlogPost[] = [
     category: "Company",
     excerpt:
       "No call centers, no excuses — just Joe, Luke, and a well-maintained fleet. A look at why Shelby keeps coming back to F&S Expedited.",
-    image: "/assets/hero-truck.jpg",
+    image: "/assets/joe-and-luke-owners.jpg",
     body: [
       {
         paragraphs: [
@@ -148,7 +148,7 @@ export const posts: BlogPost[] = [
     category: "Material Delivery",
     excerpt:
       "Ordering the wrong aggregate wastes money and time. Use this quick guide to spec the right material for your Shelby job site.",
-    image: "/assets/hero-truck.jpg",
+    image: "/assets/material-delivery.png",
     body: [
       {
         paragraphs: [
@@ -176,7 +176,7 @@ export const posts: BlogPost[] = [
     category: "Emergency",
     excerpt:
       "Emergencies don't keep business hours. Our 24/7 dispatch exists for the moments your project simply cannot pause.",
-    image: "/assets/hero-truck.jpg",
+    image: "/assets/gallery/night-excavator-loading.jpg",
     body: [
       {
         paragraphs: [
@@ -203,7 +203,7 @@ export const posts: BlogPost[] = [
     category: "Material Delivery",
     excerpt:
       "Seed and sod get the credit, but topsoil does the work. Here's how the right soil turns a patchy lawn into a showpiece.",
-    image: "/assets/hero-truck.jpg",
+    image: "/assets/gallery/gravel-driveway-delivery.jpg",
     body: [
       {
         paragraphs: [
@@ -230,7 +230,7 @@ export const posts: BlogPost[] = [
     category: "Material Delivery",
     excerpt:
       "Whether you're building a new driveway, preparing a construction site, or transforming your landscape, choosing the right materials can make or break your project.",
-    image: "/assets/hero-truck.jpg",
+    image: "/assets/gallery/gravel-delivery-rocks-truck.jpg",
     body: [
       {
         paragraphs: [

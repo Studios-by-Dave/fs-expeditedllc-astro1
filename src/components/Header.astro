@@ -52,7 +52,7 @@ import { nav, site } from "../data/site";
           }
           if (item.label === "Blog") {
             return (
-              <a href={item.href} class="rounded-md px-3 py-2 text-[15px] font-semibold text-[hsl(216,100%,20%)] hover:text-[hsl(216,80%,30%)]" style="-webkit-text-stroke: 0.5px hsl(216,80%,60%); paint-order: stroke fill;">{item.label}</a>
+              <a href={item.href} class="rounded-md px-3 py-2 text-[15px] font-semibold text-[hsl(216,100%,20%)] hover:text-[hsl(216,80%,30%)]" style="-webkit-text-stroke: 1px hsl(60,100%,50%); paint-order: stroke fill;">{item.label}</a>
             );
           }
           return (
@@ -99,7 +99,7 @@ import { nav, site } from "../data/site";
             );
           }
           if (item.label === "Blog") {
-            return <a href={item.href} class="px-2 py-2 text-[15px] font-semibold text-[hsl(216,100%,20%)] hover:text-[hsl(216,80%,30%)] border-b border-border" style="-webkit-text-stroke: 0.5px hsl(216,80%,60%); paint-order: stroke fill;">{item.label}</a>;
+            return <a href={item.href} class="px-2 py-2 text-[15px] font-semibold text-[hsl(216,100%,20%)] hover:text-[hsl(216,80%,30%)] border-b border-border" style="-webkit-text-stroke: 1px hsl(60,100%,50%); paint-order: stroke fill;">{item.label}</a>;
           }
           return <a href={item.href} class="px-2 py-2 text-sm font-medium text-foreground hover:text-primary border-b border-border">{item.label}</a>;
         })

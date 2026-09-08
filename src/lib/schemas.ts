@@ -43,7 +43,7 @@ export const localBusinessSchema = {
     "Expedited dump truck hauling, gravel delivery, debris removal & expedited services within 1-hour of Shelby, NC. Serving Charlotte, Gastonia, Hickory, Spartanburg, Greenville and 50+ cities. Licensed & insured.",
   url: "https://www.fs-expeditedllc.com",
   telephone: ["+18653649011", "+17047518141"],
-  email: "Aldrich2577@gmail.com",
+  email: "stormicpalmer@gmail.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Shelby",

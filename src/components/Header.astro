@@ -63,13 +63,8 @@ import { nav, site } from "../data/site";
     </nav>
 
     <div class="hidden lg:flex items-center gap-4 ml-auto shrink-0">
-      <a href={`tel:${site.phoneJoe.tel}`} class="inline-flex items-center gap-2 text-base font-semibold text-foreground hover:text-primary transition-colors">
-        <Icon name="phone" class="w-4 h-4 text-green-500" />
-        {site.phoneJoe.display}
-      </a>
-      <a href={`tel:${site.phoneLuke.tel}`} class="inline-flex items-center gap-2 text-base font-semibold text-foreground hover:text-primary transition-colors">
-        <Icon name="phone" class="w-4 h-4 text-green-500" />
-        {site.phoneLuke.display}
+      <a href="/contact" class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors">
+        <Icon name="phone" class="w-4 h-4 text-green-500" /> Get a Free Quote
       </a>
     </div>
 

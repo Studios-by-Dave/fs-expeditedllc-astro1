@@ -1,0 +1,27 @@
+---
+import Icon from "./Icon.astro";
+import { site } from "../data/site";
+---
+
+<div class="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-3">
+  <a
+    href={`tel:${site.phoneJoe.tel}`}
+    class="flex items-center gap-3 bg-black/40 backdrop-blur-md border border-white/10 text-white px-4 py-3 rounded-xl font-semibold text-sm hover:bg-black/60 hover:border-primary/30 transition-all duration-300 shadow-lg"
+  >
+    <Icon name="phone" class="w-4 h-4 text-green-400" />
+    <div class="leading-tight">
+      <span class="block text-[10px] uppercase tracking-widest text-gray-400">Joe</span>
+      <span class="block">{site.phoneJoe.display}</span>
+    </div>
+  </a>
+  <a
+    href={`tel:${site.phoneLuke.tel}`}
+    class="flex items-center gap-3 bg-black/40 backdrop-blur-md border border-white/10 text-white px-4 py-3 rounded-xl font-semibold text-sm hover:bg-black/60 hover:border-primary/30 transition-all duration-300 shadow-lg"
+  >
+    <Icon name="phone" class="w-4 h-4 text-green-400" />
+    <div class="leading-tight">
+      <span class="block text-[10px] uppercase tracking-widest text-gray-400">Luke</span>
+      <span class="block">{site.phoneLuke.display}</span>
+    </div>
+  </a>
+</div>

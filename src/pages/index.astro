@@ -12,9 +12,7 @@ const highlights = [
 ];
 
 const testimonials = [
-  { name: "Mike R.", location: "Charlotte, NC", text: "On-time, every time. F&S keeps our projects moving without fail." },
-  { name: "Sarah K.", location: "Gastonia, NC", text: "Fast, reliable, and fair pricing. Exactly what we need on every job." },
-  { name: "David L.", location: "Forest City, NC", text: "Dependable hauling with no surprises. Highly recommend." },
+  { name: "Premier Landscape & Turf", location: "Shelby, NC", text: "F&S Expedited LLC provided outstanding dump truck hauling services from start to finish." },
 ];
 ---
 
@@ -80,13 +78,13 @@ const testimonials = [
         <h2 class="mt-4 text-4xl md:text-5xl font-heading font-bold text-foreground tracking-wider">WHY THEY CALL F&amp;S</h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-10">
+      <div class="max-w-xl mx-auto mb-10">
         {testimonials.map((t) => (
-          <div class="bg-card border border-border rounded-xl p-6">
-            <div class="flex gap-1 mb-3">
-              {[...Array(5)].map(() => <Icon name="star" class="w-4 h-4 text-yellow-500" />)}
+          <div class="bg-card border border-border rounded-xl p-8 text-center">
+            <div class="flex gap-1 mb-4 justify-center">
+              {[...Array(5)].map(() => <Icon name="star" class="w-5 h-5 text-yellow-500" />)}
             </div>
-            <p class="text-muted-foreground italic mb-4">"{t.text}"</p>
+            <p class="text-muted-foreground italic mb-4 text-lg">"{t.text}"</p>
             <p class="text-foreground font-semibold">{t.name}</p>
             <p class="text-sm text-muted-foreground">{t.location}</p>
           </div>

@@ -9,18 +9,70 @@ const crumbs = [
 ];
 
 const sections = [
-  { title: "Use of Site", body: "You agree to use this site lawfully and not to engage in any activity that disrupts or harms the site or others." },
-  { title: "Service Quotes", body: "Quotes provided are estimates. Final pricing depends on job specifics, site conditions, and materials. All services are subject to availability and confirmation." },
-  { title: "Limitation of Liability", body: "F&S Expedited LLC is not liable for indirect or incidental damages arising from use of this site or our services to the extent permitted by law." },
-  { title: "Governing Law", body: "These terms are governed by the laws of the State of North Carolina." },
-  { title: "Changes", body: "We may update these terms at any time. Continued use constitutes acceptance of the revised terms." },
-  { title: "Contact", body: "Questions? Contact us at Aldrich2577@gmail.com or (865) 364-9011." },
+  {
+    title: "Acceptance of Terms",
+    body: "By accessing or using the services of F&S Expedited LLC (\"Company,\" \"we,\" \"us,\" or \"our\"), you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.",
+  },
+  {
+    title: "Services Provided",
+    body: "F&S Expedited LLC provides dump truck hauling, material delivery, debris removal, site preparation, and related transportation services within a 100-mile radius of Shelby, NC. Service availability, scheduling, and pricing are subject to change without notice.",
+  },
+  {
+    title: "Quotes and Pricing",
+    body: "All quotes are estimates and valid for 30 days unless otherwise stated. Final pricing may vary based on actual load volume, distance, material type, site conditions, and additional requirements. We reserve the right to adjust pricing after a site assessment.",
+  },
+  {
+    title: "Scheduling and Dispatch",
+    body: "We make every effort to meet requested scheduling. Same-day and expedited dispatch is available but not guaranteed. Delays caused by weather, road conditions, equipment failure, or circumstances beyond our control do not constitute grounds for liability.",
+  },
+  {
+    title: "Payment Terms",
+    items: [
+      "Payment is due upon completion of services unless otherwise agreed in writing.",
+      "We accept cash, check, and electronic transfers.",
+      "A 1.5% monthly late fee may apply to overdue balances.",
+      "Returned checks are subject to a $50 fee.",
+    ],
+  },
+  {
+    title: "Customer Responsibilities",
+    items: [
+      "Ensure job site access is clear and safe for heavy equipment.",
+      "Provide accurate information about load requirements and site conditions.",
+      "Obtain any necessary permits for material delivery or hauling.",
+      "Notify us of any hazardous materials or conditions at the job site.",
+    ],
+  },
+  {
+    title: "Liability Limitations",
+    body: "F&S Expedited LLC is licensed and insured. However, we are not liable for damage to unpaved surfaces, underground utilities not marked by the customer, or conditions caused by force majeure events. Our liability is limited to the total amount paid for the specific service in question.",
+  },
+  {
+    title: "Cancellation Policy",
+    body: "Cancellations made 24 hours or more before scheduled dispatch are accepted without penalty. Cancellations within 24 hours of dispatch may be subject to a trip charge. No-shows without prior notice will be billed in full.",
+  },
+  {
+    title: "Intellectual Property",
+    body: "All content on this website, including text, images, logos, and graphics, is the property of F&S Expedited LLC and protected by copyright law. You may not reproduce or distribute any content without written permission.",
+  },
+  {
+    title: "Governing Law",
+    body: "These Terms of Service are governed by the laws of the State of North Carolina. Any disputes shall be resolved in the courts of Cleveland County, NC.",
+  },
+  {
+    title: "Changes to Terms",
+    body: "We reserve the right to update these Terms of Service at any time. Changes take effect immediately upon posting to this page. Your continued use of our services constitutes acceptance of the updated terms.",
+  },
+  {
+    title: "Contact Us",
+    body: "Questions about these Terms of Service? Contact us at (865) 364-9011, (704) 751-8141, or email Aldrich2577@gmail.com.",
+  },
 ];
 ---
 
 <Layout
   title="Terms of Service — F&S Expedited LLC"
-  description="The terms governing your use of the F&S Expedited LLC website and hauling services. Read our full terms of service."
+  description="Terms and conditions governing the use of F&S Expedited LLC hauling, delivery, and site services. Read our full terms of service."
   canonical="/terms-of-service"
   schemas={[breadcrumbSchema(crumbs)]}
 >
@@ -30,7 +82,8 @@ const sections = [
       <div class="max-w-3xl mx-auto">
         <h1 class="text-4xl md:text-5xl font-heading font-bold text-foreground tracking-wider mb-6">Terms of Service</h1>
         <p class="text-lg text-muted-foreground mb-10 font-sans">
-          By accessing or using the F&S Expedited LLC website, you agree to these Terms of Service.
+          These Terms of Service govern your use of F&S Expedited LLC's hauling, material delivery, and site services.
+          Please read them carefully.
         </p>
 
         <div class="space-y-10">
@@ -38,7 +91,12 @@ const sections = [
             sections.map((section) => (
               <div>
                 <h2 class="text-2xl font-heading font-bold text-foreground tracking-wide mb-3">{section.title}</h2>
-                <p class="text-muted-foreground font-sans leading-relaxed">{section.body}</p>
+                {section.body && <p class="text-muted-foreground font-sans leading-relaxed">{section.body}</p>}
+                {section.items && (
+                  <ul class="list-disc pl-6 space-y-2 text-muted-foreground font-sans">
+                    {section.items.map((item) => <li>{item}</li>)}
+                  </ul>
+                )}
               </div>
             ))
           }

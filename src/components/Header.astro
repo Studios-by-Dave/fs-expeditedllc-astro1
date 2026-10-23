@@ -17,7 +17,7 @@ import { nav, site } from "../data/site";
         nav.map((item) => {
           if (item.cta) {
             return (
-              <a href={item.href} class="ml-2 inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors">
+              <a href={item.href} class="ml-2 inline-flex items-center gap-2 bg-primary text-primary-foreground px-3 py-1.5 rounded-xl text-sm font-semibold hover:bg-primary/90 transition-colors">
                 <Icon name="phone" class="w-4 h-4 text-green-500" /> {item.label}
               </a>
             );
@@ -63,7 +63,7 @@ import { nav, site } from "../data/site";
     </nav>
 
     <div class="hidden lg:flex items-center gap-4 ml-auto shrink-0">
-      <a href="/contact" class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors">
+      <a href="/contact" class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-xl text-sm font-semibold hover:bg-primary/90 transition-colors">
         <Icon name="phone" class="w-4 h-4 text-green-500" /> Get a Free Quote
       </a>
     </div>
@@ -79,7 +79,7 @@ import { nav, site } from "../data/site";
         nav.map((item) => {
           if (item.cta) {
             return (
-              <a href={item.href} class="mt-2 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-4 py-3 rounded-lg text-sm font-semibold">
+              <a href={item.href} class="mt-2 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-3 py-2 rounded-xl text-sm font-semibold">
                 <Icon name="phone" class="w-4 h-4 text-green-500" /> {item.label}
               </a>
             );

@@ -1,0 +1,40 @@
+keyword,target_url,intent,priority,status
+dump truck hauling shelby nc,/service-area/shelby-nc,transactional,1,planned-rebuild
+dump truck services shelby nc,/service-area/shelby-nc,transactional,1,planned-rebuild
+gravel delivery shelby nc,/services/material-delivery/gravel-delivery,transactional,1,planned-expand
+fill dirt shelby nc,/services/material-delivery/soil-delivery,transactional,1,planned-expand
+topsoil delivery shelby nc,/services/material-delivery/soil-delivery,transactional,1,planned-expand
+sand delivery shelby nc,/services/material-delivery/sand-delivery,transactional,1,planned-expand
+debris removal shelby nc,/services/site-services/debris-removal,transactional,1,planned-expand
+dump truck hauling kings mountain nc,/service-area/kings-mountain-nc,transactional,2,planned-new
+dump truck hauling boiling springs nc,/service-area/boiling-springs-nc,transactional,2,planned-new
+gravel delivery cleveland county nc,/services/material-delivery/gravel-delivery,transactional,1,planned-expand
+material delivery services,/services/material-delivery,informational,2,planned-expand
+dump truck service near me,/service-area/shelby-nc,transactional,1,planned-rebuild
+how many yards in a dump truck,/blog/how-many-yards-in-a-dump-truck,informational,1,planned-new
+tri-axle vs quad-axle dump truck,/blog/tri-axle-vs-quad-axle-dump-truck,informational,1,planned-new
+how much gravel do i need,/blog/how-much-gravel-do-i-need,informational,1,planned-new
+how much fill dirt do i need,/blog/how-much-fill-dirt-do-i-need,informational,1,planned-new
+gravel delivery cost factors cleveland county,/blog/gravel-delivery-cost-factors-cleveland-county,informational,2,planned-new
+driveway gravel guide shelby nc clay soil,/blog/driveway-gravel-guide-shelby-nc,informational,2,planned-new
+same day dump truck delivery,/blog/same-day-dump-truck-dispatch-how-it-works,informational,2,planned-new
+dump truck hauling gastonia nc,/service-area/gastonia-nc,transactional,3,existing
+dump truck hauling forest city nc,/service-area/forest-city-nc,transactional,3,existing
+dump truck hauling asheville nc,/service-area/asheville-nc,transactional,4,existing
+dump truck hauling charlotte nc,/service-area/charlotte-nc,transactional,4,deferred-no-build
+land clearing shelby nc,/services/site-services/land-clearing,transactional,2,planned-expand
+grading shelby nc,/services/site-services/land-grading,transactional,2,planned-expand
+site prep shelby nc,/services/site-services/site-prep,transactional,2,planned-expand
+retaining walls shelby nc,/services/site-services/retaining-walls,transactional,2,planned-expand
+debris removal shelby nc,/services/site-services/debris-removal,transactional,2,planned-expand
+aggregate transport shelby nc,/services/site-services/aggregate-transport,transactional,2,planned-expand
+underground utilities shelby nc,/services/site-services/underground-utilities,transactional,3,planned-expand
+emergency expedited hauling shelby nc,/services/emergency-expedited,transactional,2,planned-expand
+f&s expedited llc,/ (homepage),navigational,1,existing
+f&s hauling,/ (homepage),navigational,2,brand-collision-cleanup
+dirt hauling shelby nc,/service-area/shelby-nc,transactional,1,existing-win
+dump truck hauling expert charlotte nc,/service-area/charlotte-nc,transactional,4,deferred-no-build
+landscape material hauling asheville nc,/service-area/asheville-nc,transactional,3,existing
+gravel hauling asheville nc,/service-area/asheville-nc,transactional,3,existing
+dump truck service,/ (homepage),informational,3,existing
+material delivery services,/services/material-delivery,informational,2,planned-expand

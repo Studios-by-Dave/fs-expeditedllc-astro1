@@ -28,7 +28,13 @@ const redirects = {
 export default defineConfig({
   site: 'https://www.fs-expeditedllc.com',
   output: 'static',
-  trailingSlash: 'ignore',
+  // One URL format everywhere: NO trailing slash. Matches the canonical tags
+  // (src/components/SEO.astro) and all 488 internal links, and makes
+  // @astrojs/sitemap emit no-slash <loc> values (it checks this flag in both
+  // addPageName() and addRouteUrl()). Paired with "trailingSlash": false in
+  // vercel.json so the host 308s /x/ -> /x. Changing this does NOT change
+  // emitted file paths — Astro's getOutFile() keys off build.format only.
+  trailingSlash: 'never',
   integrations: [
     sitemap({
       // Exclude legacy redirect stubs from the sitemap (keep only canonical pages).

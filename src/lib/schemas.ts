@@ -6,7 +6,7 @@ export const organizationSchema = {
   "@id": "https://www.fs-expeditedllc.com#organization",
   name: "F&S Expedited LLC",
   description:
-    "Expedited dump truck hauling, gravel delivery, debris removal & expedited services within 1-hour of Shelby, NC. Serving Charlotte, Gastonia, Hickory, Spartanburg, Greenville and 50+ cities. Licensed & insured.",
+    "Dump truck hauling, gravel delivery, debris removal, and material delivery serving Shelby, NC and Cleveland County. Same-day dispatch available.",
   url: "https://www.fs-expeditedllc.com",
   logo: {
     "@type": "ImageObject",
@@ -26,11 +26,9 @@ export const organizationSchema = {
     addressCountry: "US",
   },
   geo: { "@type": "GeoCoordinates", latitude: 35.2924, longitude: -81.5356 },
-  openingHours: "Mo-Fr 06:00-18:00",
   areaServed: {
-    "@type": "GeoCircle",
-    geoMidpoint: { "@type": "GeoCoordinates", latitude: 35.2924, longitude: -81.5356 },
-    geoRadius: "160934",
+    "@type": "Place",
+    name: "Shelby, NC and Cleveland County",
   },
 };
 
@@ -40,7 +38,7 @@ export const localBusinessSchema = {
   "@id": "https://www.fs-expeditedllc.com#localbusiness",
   name: "F&S Expedited LLC",
   description:
-    "Expedited dump truck hauling, gravel delivery, debris removal & expedited services within 1-hour of Shelby, NC. Serving Charlotte, Gastonia, Hickory, Spartanburg, Greenville and 50+ cities. Licensed & insured.",
+    "Dump truck hauling, gravel delivery, debris removal, and material delivery serving Shelby, NC and Cleveland County. Same-day dispatch available.",
   url: "https://www.fs-expeditedllc.com",
   telephone: ["+18653649011", "+17047518141"],
   email: "stormicpalmer@gmail.com",
@@ -53,14 +51,9 @@ export const localBusinessSchema = {
   },
   geo: { "@type": "GeoCoordinates", latitude: 35.2924, longitude: -81.5356 },
   areaServed: {
-    "@type": "GeoCircle",
-    geoMidpoint: { "@type": "GeoCoordinates", latitude: 35.2924, longitude: -81.5356 },
-    geoRadius: "160934",
+    "@type": "Place",
+    name: "Shelby, NC and Cleveland County",
   },
-  openingHours: "Mo-Fr 06:00-18:00",
-  priceRange: "$$",
-  paymentAccepted: ["Cash", "Check", "Credit Card"],
-  currenciesAccepted: "USD",
 };
 
 export const serviceSchema = (name: string, description: string) => ({
@@ -81,9 +74,8 @@ export const serviceSchema = (name: string, description: string) => ({
     },
   },
   areaServed: {
-    "@type": "GeoCircle",
-    geoMidpoint: { "@type": "GeoCoordinates", latitude: 35.2924, longitude: -81.5356 },
-    geoRadius: 160934,
+    "@type": "Place",
+    name: "Shelby, NC and Cleveland County",
   },
 });
 

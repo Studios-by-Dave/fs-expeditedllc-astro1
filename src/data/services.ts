@@ -29,7 +29,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     slug: "dump-trucks-hauling-services",
     title: "Dump Truck Services",
-    description: "Complete dump truck hauling and comprehensive site services.",
+    description: "Heavy-duty dump truck hauling for construction, commercial, and residential projects across Shelby, NC and the Carolinas. Same-day dispatch available.",
     icon: "truck",
     heroImage: "/assets/hero-truck.jpg",
     intro:
@@ -39,7 +39,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     slug: "material-delivery",
     title: "Material Delivery",
-    description: "Quality materials delivered directly to your job site.",
+    description: "Gravel, sand, soil, and aggregate delivered to your job site across Shelby, NC and the Carolinas. Reliable material delivery from F&S Expedited LLC.",
     icon: "package",
     heroImage: "/assets/material-delivery.png",
     intro:
@@ -49,7 +49,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     slug: "site-services",
     title: "Site Services",
-    description: "Professional site preparation and land management.",
+    description: "Site prep, land clearing, grading, debris removal, and retaining walls for construction projects in Shelby, NC and the Carolinas. F&S Expedited LLC.",
     icon: "construction",
     heroImage: "/assets/site-services.png",
     intro:
@@ -59,7 +59,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     slug: "emergency-expedited",
     title: "Emergency Expedited",
-    description: "Fast-response hauling and emergency services.",
+    description: "Same-day and next-day expedited dump truck hauling and material delivery when your project cannot wait. Priority dispatch from F&S Expedited LLC.",
     icon: "zap",
     heroImage: "/assets/emergency-services.png",
     intro:
@@ -71,7 +71,7 @@ export const serviceCategories: ServiceCategory[] = [
 export const services: Service[] = [
   {
     slug: "dump-truck-hauling",
-    title: "Dump Truck Services",
+    title: "Dump Truck Hauling",
     category: "dump-trucks-hauling-services",
     description:
       "Heavy-duty dump truck services for construction sites, commercial projects, and residential needs. On-time, every time.",
@@ -151,7 +151,7 @@ export const services: Service[] = [
   },
   {
     slug: "emergency-expedited",
-    title: "Emergency Expedited",
+    title: "Same-Day Expedited Dispatch",
     category: "emergency-expedited",
     description:
       "Need materials hauled TODAY? Our expedited service gets your load where it needs to be — fast.",

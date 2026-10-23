@@ -6,10 +6,14 @@ import { services, getCategory, serviceCategories } from "../../../data/services
 import { breadcrumbSchema, serviceSchema } from "../../../lib/schemas";
 
 export function getStaticPaths() {
-  return services.map((s) => ({
-    params: { category: s.category, service: s.slug },
-    props: { service: s },
-  }));
+  // Option A duplicate-slug resolution: a service whose slug equals its category
+  // slug is merged into its category page (see [category].astro) and 301s to it.
+  return services
+    .filter((s) => s.slug !== s.category)
+    .map((s) => ({
+      params: { category: s.category, service: s.slug },
+      props: { service: s },
+    }));
 }
 
 const { service } = Astro.props;

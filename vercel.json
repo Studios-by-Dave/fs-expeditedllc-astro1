@@ -1,8 +1,109 @@
 {
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/sitemap.xml",
       "destination": "/sitemap-index.xml",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-fs-hauling-reliable-dump-truck-services-shelby-nc",
+      "destination": "/blog/why-fs-expedited-reliable-dump-truck-services-shelby-nc",
+      "permanent": true
+    },
+    {
+      "source": "/why-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/why-us/about",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/why-us/promos",
+      "destination": "/promos",
+      "permanent": true
+    },
+    {
+      "source": "/testimonials",
+      "destination": "/reviews",
+      "permanent": true
+    },
+    {
+      "source": "/services/gravel-sand-delivery",
+      "destination": "/services/material-delivery/gravel-delivery",
+      "permanent": true
+    },
+    {
+      "source": "/services/gravel-delivery",
+      "destination": "/services/material-delivery/gravel-delivery",
+      "permanent": true
+    },
+    {
+      "source": "/services/sand-delivery",
+      "destination": "/services/material-delivery/sand-delivery",
+      "permanent": true
+    },
+    {
+      "source": "/services/soil-delivery",
+      "destination": "/services/material-delivery/soil-delivery",
+      "permanent": true
+    },
+    {
+      "source": "/services/aggregate-transport",
+      "destination": "/services/site-services/aggregate-transport",
+      "permanent": true
+    },
+    {
+      "source": "/services/debris-removal",
+      "destination": "/services/site-services/debris-removal",
+      "permanent": true
+    },
+    {
+      "source": "/services/site-prep",
+      "destination": "/services/site-services/site-prep",
+      "permanent": true
+    },
+    {
+      "source": "/services/land-clearing",
+      "destination": "/services/site-services/land-clearing",
+      "permanent": true
+    },
+    {
+      "source": "/services/land-grading",
+      "destination": "/services/site-services/land-grading",
+      "permanent": true
+    },
+    {
+      "source": "/services/retaining-walls",
+      "destination": "/services/site-services/retaining-walls",
+      "permanent": true
+    },
+    {
+      "source": "/services/underground-utilities",
+      "destination": "/services/site-services/underground-utilities",
+      "permanent": true
+    },
+    {
+      "source": "/services/commercial-hauling",
+      "destination": "/services/emergency-expedited/commercial-hauling",
+      "permanent": true
+    },
+    {
+      "source": "/services/dump-truck-hauling",
+      "destination": "/services/dump-trucks-hauling-services/dump-truck-hauling",
+      "permanent": true
+    },
+    {
+      "source": "/services/emergency-expedited-service",
+      "destination": "/services/emergency-expedited",
+      "permanent": true
+    },
+    {
+      "source": "/services/emergency-expedited/emergency-expedited",
+      "destination": "/services/emergency-expedited",
       "permanent": true
     }
   ]

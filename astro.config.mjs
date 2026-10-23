@@ -3,27 +3,34 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
-// Legacy URL redirects preserved from the original Vite SPA build.
-const redirects = {
-  '/why-us': '/about',
-  '/why-us/about': '/about',
-  '/why-us/promos': '/promos',
-  '/testimonials': '/reviews',
-  '/services/gravel-sand-delivery': '/services/material-delivery/gravel-delivery',
-  '/services/aggregate-transport': '/services/site-services/aggregate-transport',
-  '/services/debris-removal': '/services/site-services/debris-removal',
-  '/services/site-prep': '/services/site-services/site-prep',
-  '/services/land-clearing': '/services/site-services/land-clearing',
-  '/services/commercial-hauling': '/services/emergency-expedited/commercial-hauling',
-  '/services/dump-truck-hauling': '/services/dump-trucks-hauling-services/dump-truck-hauling',
-  '/services/gravel-delivery': '/services/material-delivery/gravel-delivery',
-  '/services/sand-delivery': '/services/material-delivery/sand-delivery',
-  '/services/soil-delivery': '/services/material-delivery/soil-delivery',
-  '/services/retaining-walls': '/services/site-services/retaining-walls',
-  '/services/underground-utilities': '/services/site-services/underground-utilities',
-  '/services/land-grading': '/services/site-services/land-grading',
-  '/services/emergency-expedited-service': '/services/emergency-expedited/emergency-expedited',
-};
+// Legacy URL paths preserved from the original Vite SPA build.
+// The server redirects for these live in `vercel.json` (real 308s).
+// Astro's static `redirects` option is deliberately NOT used here: with
+// `output: 'static'` it builds an HTML page containing
+// <meta http-equiv="refresh"> + <meta name="robots" content="noindex">,
+// which Google treats as a dead page instead of a redirect. This list only
+// keeps these paths out of the sitemap.
+const legacyPaths = [
+  '/why-us',
+  '/why-us/about',
+  '/why-us/promos',
+  '/testimonials',
+  '/services/gravel-sand-delivery',
+  '/services/aggregate-transport',
+  '/services/debris-removal',
+  '/services/site-prep',
+  '/services/land-clearing',
+  '/services/commercial-hauling',
+  '/services/dump-truck-hauling',
+  '/services/gravel-delivery',
+  '/services/sand-delivery',
+  '/services/soil-delivery',
+  '/services/retaining-walls',
+  '/services/underground-utilities',
+  '/services/land-grading',
+  '/services/emergency-expedited-service',
+  '/blog/why-fs-hauling-reliable-dump-truck-services-shelby-nc',
+];
 
 export default defineConfig({
   site: 'https://www.fs-expeditedllc.com',
@@ -37,12 +44,11 @@ export default defineConfig({
   trailingSlash: 'never',
   integrations: [
     sitemap({
-      // Exclude legacy redirect stubs from the sitemap (keep only canonical pages).
-      filter: (page) => !Object.keys(redirects).some((r) => page.includes(r)),
+      // Exclude legacy paths from the sitemap (keep only canonical pages).
+      filter: (page) => !legacyPaths.some((r) => page.includes(r)),
     }),
   ],
   vite: {
     plugins: [tailwindcss()],
   },
-  redirects,
 });

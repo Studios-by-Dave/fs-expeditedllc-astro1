@@ -25,7 +25,7 @@
 
 | # | Finding | Where | Effort |
 |---|---|---|---|
-| 1 | Meta-refresh + `noindex` stubs stand in for 301s | `astro.config.mjs` `redirects` → 19 entries; verified live on 3 URLs | E-M |
+| 1 | Meta-refresh + `noindex` stubs stand in for 301s | `astro.config.mjs` `redirects` → 18 entries; verified live on 3 URLs | E-M |
 | 2 | Old blog slug 404s with no redirect | `/blog/why-fs-hauling-reliable-dump-truck-services-shelby-nc` (live **404**) | E-S |
 | 3 | Sitemap emits trailing-slash URLs; canonicals are no-slash | `dist/sitemap-0.xml` (43/43 mismatch) vs `src/components/SEO.astro` | E-S |
 | 4 | Sitemap has no `<lastmod>` | `dist/sitemap-0.xml` — 0 `<lastmod>` nodes | E-S |
@@ -43,7 +43,7 @@
 ### 1. Redirects are HTML meta-refresh stubs, not server 301s ✅ Verified
 
 - **What:** Astro's static `redirects` emit an HTML page containing `<meta http-equiv="refresh">` + `<meta name="robots" content="noindex">` instead of an HTTP 301.
-- **Where:** `astro.config.mjs` lines 7–26 (19 legacy redirects). Live proof:
+- **Where:** `astro.config.mjs` lines 7–26 (**18** legacy redirects). Live proof:
   `GET /services/gravel-sand-delivery` → **HTTP 200**, body `<!doctype html><title>Redirecting to: …<meta http-equiv="refresh" …><meta name="robots" content="noindex">`.
   Same verified live for `/services/soil-delivery` and `/why-us/promos`.
   Built copy: `dist/services/gravel-sand-delivery/index.html`.
@@ -151,7 +151,7 @@ Internal in-links (from the crawl):
 
 - 43 URLs, **0 `<lastmod>`**.
 - Contains the duplicate-slug URL `/services/emergency-expedited/emergency-expedited/`.
-- Correctly **excludes** all 19 stub/redirect paths (the `filter` in `astro.config.mjs` works) — ✅ no stub URLs in sitemap.
+- Correctly **excludes** all 18 stub/redirect paths (the `filter` in `astro.config.mjs` works) — ✅ no stub URLs in sitemap.
 - Excludes `/service-area/charlotte-nc` (does not exist — see ❌ below).
 - `robots.txt` ✅ correct: `Allow: /`, sitemap declared as `/sitemap-index.xml`; `/sitemap.xml` → `/sitemap-index.xml` **308** via `vercel.json`.
 - **Fix:** add `lastmod` (from content dates), drop the duplicate-slug page after the merge decision.

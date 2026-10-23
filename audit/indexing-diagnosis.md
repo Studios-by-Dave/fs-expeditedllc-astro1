@@ -93,9 +93,9 @@ Live redirect matrix (2026-10-23):
 
 The stub pages embed `<meta name="robots" content="noindex">` (verified live on `/services/gravel-sand-delivery`, `/services/soil-delivery`, `/why-us/promos`).
 
-**Why only 1 counted:** Google classifies by *reason it last saw*; stubs that were crawled as redirects land in different buckets depending on which signal Google acted on first. The class has ≥3 member URLs in the repo (19 stubs total), so this count fluctuates.
+**Why only 1 counted:** Google classifies by *reason it last saw*; stubs that were crawled as redirects land in different buckets depending on which signal Google acted on first. The class has ≥3 member URLs in the repo (18 stubs total), so this count fluctuates.
 
-**Fix (P1):** convert all 19 stubs to real 308s in `vercel.json` → the noindex source disappears entirely.
+**Fix (P1):** convert all 18 stubs to real 308s in `vercel.json` → the noindex source disappears entirely.
 
 ---
 
@@ -112,7 +112,7 @@ The stub pages embed `<meta name="robots" content="noindex">` (verified live on 
 ## Re-validation sequence (Phase 5 timing)
 
 1. Deploy Phase 1 fixes (no builds run in this audit — client-triggered).
-2. `curl -sI` each of the 19 redirect paths → confirm 301/308.
+2. `curl -sI` each of the 18 stub paths + the old-blog slug → confirm 301/308.
 3. GSC → *Sitemaps* → resubmit `sitemap-index.xml`; confirm the listed URL count matches 43 and shows "Success".
 4. GSC → *URL Inspection* → request indexing manually for: `/`, `/service-area/shelby-nc`, `/services/material-delivery/gravel-delivery`, `/services/dump-trucks-hauling-services/dump-truck-hauling`, `/blog/why-fs-expedited-reliable-dump-truck-services-shelby-nc`.
 5. *Validate Fix* only for the 404 (after the 301 is live) — not for "Discovered/Crawled", which are not error buckets.

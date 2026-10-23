@@ -98,7 +98,12 @@
     },
     {
       "source": "/services/emergency-expedited-service",
-      "destination": "/services/emergency-expedited/emergency-expedited",
+      "destination": "/services/emergency-expedited",
+      "permanent": true
+    },
+    {
+      "source": "/services/emergency-expedited/emergency-expedited",
+      "destination": "/services/emergency-expedited",
       "permanent": true
     }
   ]

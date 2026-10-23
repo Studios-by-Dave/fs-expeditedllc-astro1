@@ -13,7 +13,11 @@ export function getStaticPaths() {
 }
 
 const { category } = Astro.props;
-const categoryServices = services.filter((s) => s.category === category.slug);
+// Option A duplicate-slug resolution: a service whose slug equals its category
+// slug is the category's flagship service. Its content is merged into this page
+// instead of living on a duplicate /<cat>/<cat>/ URL.
+const flagshipService = services.find((s) => s.category === category.slug && s.slug === category.slug);
+const categoryServices = services.filter((s) => s.category === category.slug && s.slug !== category.slug);
 const otherCategories = serviceCategories.filter((c) => c.slug !== category.slug);
 
 const crumbs = [
@@ -68,6 +72,36 @@ const crumbs = [
       </div>
     </div>
   </section>
+
+  {
+    flagshipService && (
+      <section class="section-padding bg-background">
+        <div class="container mx-auto px-4">
+          <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-heading font-bold text-foreground mb-4">{flagshipService.title}</h2>
+            <p class="text-lg text-muted-foreground leading-relaxed">{flagshipService.longDescription}</p>
+            <h3 class="mt-8 text-xl font-heading font-semibold text-foreground mb-3">What's Included</h3>
+            <div class="flex flex-wrap gap-2">
+              {flagshipService.features.map((f) => (
+                <span class="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm text-secondary-foreground">
+                  <Icon name="check" class="w-4 h-4 text-primary" /> {f}
+                </span>
+              ))}
+            </div>
+            <h3 class="mt-8 text-xl font-heading font-semibold text-foreground mb-3">Why Choose F&S</h3>
+            <ul class="space-y-2">
+              {flagshipService.benefits.map((b) => (
+                <li class="flex items-start gap-3 text-sm text-muted-foreground">
+                  <Icon name="check-circle" class="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   <section class="section-padding bg-gradient-card">
     <div class="container mx-auto px-4">

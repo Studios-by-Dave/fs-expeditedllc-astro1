@@ -14,7 +14,7 @@
 - **Why it matters:** duplicate title + near-duplicate intent (category vs. its own flagship service). Plausible member of GSC "Crawled – currently not indexed".
 - **Recommended action (Option A):** merge this content into the `/services/emergency-expedited/` category page (which is only 330 words and needs it), then 301 `/services/emergency-expedited/emergency-expedited/` → `/services/emergency-expedited/`. Net: 0 content lost, one canonical URL, one title.
 - **Option B (alternative):** keep it as a distinct page with a new slug (e.g. `/services/emergency-expedited/same-day-dispatch`) and a distinct title. More URLs, more work, no content loss.
-- **Status:** Awaiting client/SEO lead decision. Not implemented.
+- **Status:** ✅ Implemented (Option A) — content merged into `/services/emergency-expedited/`, detail route no longer generated, old URL 301s to parent. See commit for the merge.
 
 ### `/services/dump-trucks-hauling-services/` vs `/services/dump-trucks-hauling-services/dump-truck-hauling/` — Recommendation: **Differentiate (done in Commit 5)**
 - Both shared the title "Dump Truck Services | F&S Expedited LLC". Commit 5 changed the detail page title to "Dump Truck Hauling | F&S Expedited LLC". No removal; URLs retained.

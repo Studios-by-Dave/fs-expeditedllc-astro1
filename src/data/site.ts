@@ -8,7 +8,7 @@ export const site = {
   phoneLuke: { tel: "7047518141", display: "(704) 751-8141", label: "Luke" },
   email: "stormicpalmer@gmail.com",
   facebook: "https://www.facebook.com/share/17MKXS5wLS/",
-  address: "Shelby, NC 28152",
+  address: "137 Daly Rd, Mooresboro, NC 28114",
   serviceRadius: "100-Mile Radius of Shelby, NC",
 };
 

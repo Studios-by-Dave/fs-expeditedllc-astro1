@@ -69,8 +69,9 @@ const crumbs = [
         </div>
 
         <aside class="lg:col-span-1">
-          <div class="bg-card border border-border rounded-2xl p-6 sticky top-24">
-            <h3 class="text-lg font-heading font-semibold text-foreground mb-4">Why Choose F&amp;S</h3>
+          <div class="bg-card border border-border rounded-2xl p-6 sticky top-24 relative overflow-hidden">
+            {service.slug === 'sand-delivery' && <img src="/assets/gallery/FS_3.jpg" alt="" aria-hidden="true" class="absolute top-0 right-0 w-24 h-24 object-cover opacity-40" />}
+            <h3 class="text-lg font-heading font-semibold text-foreground mb-4 relative">Why Choose F&amp;S</h3>
             <ul class="space-y-3">
               {service.benefits.map((b) => (
                 <li class="flex items-start gap-3 text-sm text-muted-foreground">
